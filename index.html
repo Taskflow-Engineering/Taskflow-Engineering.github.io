@@ -1,6 +1,198 @@
-<img src="images/logo.svg" height="100" alt="Logo">
-<h2> Abgabe 1 15.3.26</h2>
-<ul>
-  <!-- <li><a href="docs\TaskFlowEngineering-Abgabe1-Rollenverteilung.pdf">TaskFlowEngineering-Abgabe1-Rollenverteilung.pdf</a></li> -->
-</ul>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow Engineering – SWE I Projekt</title>
+  <style>
+    :root { --blue: #3b6fd1; --blue-dk: #2d58ad; --border: #e2e8f0; --muted: #64748b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+    header { background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 1.5rem; }
+    header img { height: 60px; }
+    header h1 { font-size: 1.4rem; color: var(--blue); }
+    header p { font-size: 0.85rem; color: var(--muted); }
+    nav { background: var(--blue); padding: 0 2rem; display: flex; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; padding: 0.7rem 1rem; font-size: 0.9rem; }
+    nav a:hover { background: var(--blue-dk); }
+    main { max-width: 960px; margin: 2rem auto; padding: 0 1.5rem; display: flex; flex-direction: column; gap: 2rem; }
+    section { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; }
+    h2 { font-size: 1.1rem; color: var(--blue); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-bottom: 1rem; }
+    h3 { font-size: 0.95rem; margin: 0.8rem 0 0.4rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th { background: var(--blue); color: #fff; text-align: left; padding: 0.5rem 0.7rem; }
+    td { padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f8fafc; }
+    .badge { font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 99px; font-weight: 600; }
+    .badge-done { background: #dcfce7; color: #16a34a; }
+    .badge-open { background: #fef9c3; color: #854d0e; }
+    .btn { display: inline-block; font-size: 0.8rem; padding: 0.25rem 0.6rem; border-radius: 4px; text-decoration: none; font-weight: 600; }
+    .btn-view { background: #eff6ff; color: var(--blue); border: 1px solid #bfdbfe; margin-right: 0.25rem; }
+    .btn-dl { background: var(--blue); color: #fff; }
+    .btn-na { background: #f1f5f9; color: var(--muted); border: 1px solid var(--border); }
+    .abgabe { border-left: 3px solid var(--blue); padding: 0.9rem 1.1rem; margin-bottom: 0.9rem; background: #f8fafc; border-radius: 0 4px 4px 0; }
+    .abgabe-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+    .abgabe-header h3 { margin: 0; font-size: 0.9rem; color: var(--blue-dk); }
+    .abgabe-header .date { font-size: 0.78rem; color: var(--muted); }
+    .info-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 0.6rem 1rem; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .info-box a { color: var(--blue); font-weight: 600; text-decoration: none; }
+    footer { background: #fff; border-top: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    footer p { font-size: 0.8rem; color: var(--muted); }
+    footer a { font-size: 0.85rem; color: var(--blue); text-decoration: none; margin-left: 1.2rem; }
+  </style>
+</head>
+<body>
 
+<header>
+  <img src="images/logo.svg" alt="Logo">
+  <div>
+    <h1>TaskFlow Engineering</h1>
+    <p>Software Engineering I &nbsp;|&nbsp; Kurs TINF2024 &nbsp;|&nbsp; DHBW Stuttgart &nbsp;|&nbsp; Frühjahr 2026</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#gruppe">Gruppe</a>
+  <a href="#projekt">Projekt</a>
+  <a href="#projektplan">Projektplan</a>
+  <a href="#abgaben">Abgaben</a>
+  <a href="#git">Repository</a>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+</nav>
+
+<main>
+
+  <section id="gruppe">
+    <h2>Gruppe &amp; Rollenverteilung</h2>
+    <table>
+      <thead><tr><th>Name</th><th>Rolle</th><th>Aufgabenbereich</th></tr></thead>
+      <tbody>
+        <tr><td>Miguel Friesen</td><td>Projektleiter</td><td>Teamkoordination, Ansprechperson für Dozentin, Betreuung und Kundschaft, Projektplan, Termineinhaltung</td></tr>
+        <tr><td>Stephan Braun</td><td>Technischer Assistent und Testverantwortlicher</td><td>Git-Repository, IDE-Setup, Infrastruktur, Testkonzept und Umsetzung</td></tr>
+        <tr><td>Tom-Liam Müller</td><td>Verantwortlicher für Recherche</td><td>Markt- und Technologierecherche, Koordination des Rechercheprozesses, strukturierte Aufbereitung</td></tr>
+        <tr><td>Maurice Nowotni</td><td>Verantwortlicher für Modellierung und Implementierung</td><td>UML-Modellierung, Designentscheidungen, Softwareimplementierung</td></tr>
+        <tr><td>Noah Schwenk</td><td>Verantwortlicher für Qualitätssicherung und Dokumentation</td><td>Projektdokumentation, Qualitätssicherungskonzept, Standards und Einhaltung</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:0.6rem; font-size:0.82rem; color:var(--muted);">Die vollständige Rollenverteilung ist in der Abgabe 1 als PDF dokumentiert.</p>
+  </section>
+
+  <section id="projekt">
+    <h2>Projektbeschreibung</h2>
+    <p style="font-size:0.95rem;">
+      Im Rahmen des Moduls <strong>Software Engineering I</strong> wird ein
+      web-basiertes <strong>Online Aufgaben-Planungssystem</strong> entwickelt. Die Software ermöglicht Nutzenden,
+      Aufgaben zu erfassen und auf Basis von Prioritäten, Deadlines, Abhängigkeiten und einem
+      individuellen Arbeitsprofil automatisch einen optimierten Arbeitsplan zu generieren.
+    </p>
+    <h3>Kernfunktionen</h3>
+    <ul style="padding-left:1.2rem; font-size:0.9rem; margin-top:0.3rem;">
+      <li><strong>Aufgaben verwalten</strong> – Titel, Beschreibung, Dauer, Deadline, Priorität, Energiebedarf</li>
+      <li><strong>Registrierung &amp; Organisation</strong> – Unternehmensbasierte Zugangsverwaltung</li>
+      <li><strong>Arbeitsplan generieren</strong> – Automatischer, nachhaltiger Tagesplan</li>
+      <li><strong>Individuelles Arbeitsprofil</strong> – Arbeitszeit, Pausen, Arbeitsphasen konfigurieren</li>
+    </ul>
+  </section>
+
+  <section id="projektplan">
+    <h2>Projektplan</h2>
+    <p style="font-size:0.9rem; margin-bottom:1rem;">Der vollständige Projektplan (Strukturplan, Ablaufplan, Terminplan, Kapazitätsplan) ist als Dokument in Abgabe 1 hinterlegt.</p>
+    <iframe src="https://sharing.clickup.com/90121539068/g/h/2kxuk3fw-792/885f8e03b1e080a"
+      style="width:100%; height:580px; border:1px solid var(--border); border-radius:4px; margin-bottom:1.2rem;" allowfullscreen></iframe>
+    <table>
+      <thead><tr><th>Phase</th><th>Meilenstein</th><th>Zieldatum</th></tr></thead>
+      <tbody>
+        <tr><td>Abgabe 1</td><td>Projektplan, Risikoanalyse, Rollenverteilung, Git und Webseite</td><td>15.03.2026</td></tr>
+        <tr><td>Abgabe 2</td><td>Recherchebericht (Marktanalyse, Use Cases, UML)</td><td>22.03.2026</td></tr>
+        <tr><td>Abgabe 3</td><td>Lastenheft, Glossar, Designstudie (Prototyp)</td><td>29.03.2026</td></tr>
+        <tr><td>Abgabe 4</td><td>Pflichtenheft</td><td>05.04.2026</td></tr>
+        <tr><td>Abgabe 5</td><td>Designentwurf (UML), Testkonzept</td><td>12.04.2026</td></tr>
+        <tr><td>Abgabe 6</td><td>Implementierungsplanung, Stories, Pair-Programming-Plan</td><td>26.04.2026</td></tr>
+        <tr><td>Implementierung</td><td>Weekly Builds + Demo (4–5 Wochenscheiben)</td><td>laufend</td></tr>
+        <tr><td>Endabnahme</td><td>Vollständiges Release inkl. Dokumentation</td><td>lt. Rahmenplan</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="abgaben">
+    <h2>Abgaben &amp; Dokumente</h2>
+    <p style="font-size:0.85rem; color:var(--muted); margin-bottom:1rem;">Aufwandsberichte und Statusberichte werden aus Datenschutzgründen nur in Moodle eingereicht.</p>
+
+    <!-- wenn man neues Dokument hinzufügen will: <tr><td>NAME</td><td><a class="btn btn-view" href="docs/DATEI.pdf" target="_blank">Ansehen</a> <a class="btn btn-dl" href="docs/DATEI.pdf" download>Herunterladen</a></td></tr> -->
+
+    <div class="abgabe">
+      <div class="abgabe-header">
+        <h3>Abgabe 1 – Projektstart</h3>
+        <span class="date">15.03.2026</span>
+        <span class="badge badge-done">abgegeben</span>
+      </div>
+      <table>
+        <thead><tr><th>Dokument</th><th style="width:190px;">Aktionen</th></tr></thead>
+        <tbody>
+          <tr><td>Rollenverteilung</td><td><a class="btn btn-view" href="docs/TaskFlowEngineering-Abgabe1-Rollenverteilung.pdf" target="_blank">Ansehen</a> <a class="btn btn-dl" href="docs/TaskFlowEngineering-Abgabe1-Rollenverteilung.pdf" download>Herunterladen</a></td></tr>
+          <tr><td>Projektplan</td><td><a class="btn btn-view" href="docs/TaskFlowEngineering-Abgabe1-Projektplan.pdf" target="_blank">Ansehen</a> <a class="btn btn-dl" href="docs/TaskFlowEngineering-Abgabe1-Projektplan.pdf" download>Herunterladen</a></td></tr>
+          <tr><td>Risikoanalyse</td><td><a class="btn btn-view" href="docs/TaskFlowEngineering-Abgabe1-Risikoanalyse.pdf" target="_blank">Ansehen</a> <a class="btn btn-dl" href="docs/TaskFlowEngineering-Abgabe1-Risikoanalyse.pdf" download>Herunterladen</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="abgabe">
+      <div class="abgabe-header"><h3>Abgabe 2 – Recherchebericht</h3><span class="date">22.03.2026</span><span class="badge badge-open">ausstehend</span></div>
+      <table><thead><tr><th>Dokument</th><th style="width:190px;">Aktionen</th></tr></thead><tbody>
+        <tr><td>Recherchebericht</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="abgabe">
+      <div class="abgabe-header"><h3>Abgabe 3 – Lastenheft, Glossar &amp; Designstudie</h3><span class="date">29.03.2026</span><span class="badge badge-open">ausstehend</span></div>
+      <table><thead><tr><th>Dokument</th><th style="width:190px;">Aktionen</th></tr></thead><tbody>
+        <tr><td>Lastenheft</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+        <tr><td>Glossar</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+        <tr><td>Designstudie / Prototyp</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="abgabe">
+      <div class="abgabe-header"><h3>Abgabe 4 – Pflichtenheft</h3><span class="date">05.04.2026</span><span class="badge badge-open">ausstehend</span></div>
+      <table><thead><tr><th>Dokument</th><th style="width:190px;">Aktionen</th></tr></thead><tbody>
+        <tr><td>Pflichtenheft</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="abgabe">
+      <div class="abgabe-header"><h3>Abgabe 5 – Designentwurf &amp; Testkonzept</h3><span class="date">12.04.2026</span><span class="badge badge-open">ausstehend</span></div>
+      <table><thead><tr><th>Dokument</th><th style="width:190px;">Aktionen</th></tr></thead><tbody>
+        <tr><td>Designentwurf (UML)</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+        <tr><td>Testkonzept</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="abgabe">
+      <div class="abgabe-header"><h3>Abgabe 6 – Implementierungsplanung</h3><span class="date">26.04.2026</span><span class="badge badge-open">ausstehend</span></div>
+      <table><thead><tr><th>Dokument</th><th style="width:190px;">Aktionen</th></tr></thead><tbody>
+        <tr><td>Story-Planung &amp; Pair-Programming-Plan</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+        <tr><td>Testsuiten-Planung</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+      </tbody></table>
+    </div>
+  </section>
+
+  <section id="git">
+    <h2>Repository &amp; Demo</h2>
+    <div class="info-box">Git-Repository: <a href="https://gitlab.com/EUER-GRUPPE/EUER-REPO" target="_blank">gitlab.com/EUER-GRUPPE/EUER-REPO</a></div>
+    <div class="info-box">Demo: <a href="demo/index.html">Demo-Version aufrufen</a></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Software Engineering I &nbsp;|&nbsp; Kurs TINF2024 &nbsp;|&nbsp; Frühjahr 2026 &nbsp;|&nbsp; DHBW Stuttgart Campus Horb</p>
+  <div>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+</body>
+</html>
