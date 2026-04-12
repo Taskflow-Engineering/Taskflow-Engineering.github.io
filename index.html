@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TaskFlow Engineering – SWE I Projekt</title>
   <style>
-    :root { --blue: #3b6fd1; --blue-dk: #2d58ad; --border: #e2e8f0; --muted: #64748b; }
+    :root { --blue: #3b6fd1; --blue-dk: #2d58ad; --border: #e2e8f0; --muted: #64748b; --red: #ef4444; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
     header { background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 1.5rem; }
@@ -98,8 +98,29 @@
 
   <section id="projektplan">
     <h2>Projektplan</h2>
+    
+    <div class="info-box" style="margin-bottom: 1.5rem; background: #eff6ff; border: 2px solid var(--red);">
+      <strong style="color: var(--red);">⚠️ Tool-Wechsel:</strong> Da unsere ursprüngliche Projektplanung die Limits der kostenlosen ClickUp-Version überschritten hat, wird das Projektmanagement nun vollständig in <strong>Jira</strong> fortgeführt. Unten findet sich noch die ursprüngliche Planung in ClickUp als Archiv.
+    </div>
+
+    <h3 style="margin-top: 0; margin-bottom: 0.8rem;">Aktuelles Jira-Board</h3>
+    <a href="https://friesenmiguel.atlassian.net/jira/core/projects/TE/timeline" target="_blank" style="display: block; position: relative; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; text-decoration: none; background: #000; margin-bottom: 2.5rem;">
+      
+      <img src="images/jira-preview.png" alt="Jira Vorschau" style="width: 100%; display: block; transition: opacity 0.3s ease; opacity: 0.85;">
+      
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(2px);">
+        <div style="background: rgba(30, 41, 59, 0.9); color: #fff; padding: 0.7rem 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); font-weight: 500; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          Interaktives Jira-Board öffnen
+        </div>
+      </div>
+    </a>
+
+    <h3 style="margin-bottom: 0.8rem;">Archiv: Ursprüngliche Planung (ClickUp)</h3>
     <iframe src="https://sharing.clickup.com/90121539068/g/2kxuk3fw-792/gantt"
-      style="width:100%; height:580px; border:1px solid var(--border); border-radius:4px; margin-bottom:1.2rem;" allowfullscreen></iframe>
+      style="width:100%; height:580px; border:1px solid var(--border); border-radius:4px; margin-bottom:2.5rem;" allowfullscreen></iframe>
+
+    <h3 style="margin-bottom: 0.8rem;">Meilensteine</h3>
     <table>
       <thead><tr><th>Phase</th><th>Meilenstein</th><th>Zieldatum</th></tr></thead>
       <tbody>
@@ -108,7 +129,7 @@
         <tr><td>Projektphase 3</td><td>Lastenheft, Glossar, Designstudie (Prototyp)</td><td>29.03.2026</td></tr>
         <tr><td>Projektphase 4</td><td>Pflichtenheft</td><td>05.04.2026</td></tr>
         <tr><td>Projektphase 5</td><td>Designentwurf (UML), Testkonzept</td><td>12.04.2026</td></tr>
-        <tr><td>Projektphase 6</td><td>Implementierungsplanung, Stories, Pair-Programming-Plan</td><td>26.04.2026</td></tr>
+        <tr><td>Projektphase 6</td><td>Implementierungsplanung und Stories</td><td>26.04.2026</td></tr>
         <tr><td>Implementierung</td><td>Weekly Builds + Demo (4–5 Wochen)</td><td>laufend</td></tr>
         <tr><td>Endabnahme</td><td>Vollständiges Release inkl. Dokumentation</td><td>am Ende</td></tr>
       </tbody>
@@ -119,7 +140,7 @@
     <h2>Projektphasen &amp; Dokumente</h2>
     <p style="font-size:0.85rem; color:var(--muted); margin-bottom:1rem;">Aufwandsberichte und Statusberichte werden aus Datenschutzgründen nur in Moodle eingereicht.</p>
 
-    <!-- wenn man neues Dokument hinzufügen will: <tr><td>NAME</td><td><a class="btn btn-view" href="docs/Projektphase ?/DATEI.pdf" target="_blank">Ansehen</a> <a class="btn btn-dl" href="docs/DATEI.pdf" download>Herunterladen</a></td></tr> -->
+<!-- wenn man neues Dokument hinzufügen will: <tr><td>NAME</td><td><a class="btn btn-view" href="docs/Projektphase ?/DATEI.pdf" target="_blank">Ansehen</a> <a class="btn btn-dl" href="docs/DATEI.pdf" download>Herunterladen</a></td></tr> -->
 
     <div class="abgabe">
       <div class="abgabe-header">
@@ -163,10 +184,10 @@
     </div>
 
     <div class="abgabe">
-      <div class="abgabe-header"><h3>Projektphase 5 – Designentwurf &amp; Testkonzept</h3><span class="date">12.04.2026</span><span class="badge badge-open">ausstehend</span></div>
+      <div class="abgabe-header"><h3>Projektphase 5 – Designbeschreibung &amp; Testkonzept</h3><span class="date">12.04.2026</span><span class="badge badge-done">abgegeben</span></div>
       <table><thead><tr><th>Dokument</th><th style="width:190px;">Aktionen</th></tr></thead><tbody>
-        <tr><td>Designentwurf (UML)</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
-        <tr><td>Testkonzept</td><td><span class="btn btn-na">Noch nicht verfügbar</span></td></tr>
+        <tr><td>Designbeschreibung</td><td><a class="btn btn-view" href="docs/Projektphase 5/Designbeschreibung.pdf" target="_blank">Ansehen</a> <a class="btn btn-dl" href="docs/Projektphase 5/Designbeschreibung.pdf" download>Herunterladen</a></td></tr>
+        <tr><td>Testkonzept</td><td><a class="btn btn-view" href="docs/Projektphase 5/Testkonzept.pdf" target="_blank">Ansehen</a> <a class="btn btn-dl" href="docs/Projektphase 5/Testkonzept.pdf" download>Herunterladen</a></td></tr>
       </tbody></table>
     </div>
 
