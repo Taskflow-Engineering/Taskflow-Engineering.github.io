@@ -38,13 +38,28 @@ Dieses Repository ist ausschließlich für die Benutzeroberfläche (User Interfa
 
 ### 3. Dokumentation (`/docs/`)
 
-Das Docs-Repository ist der zentrale Anlaufpunkt für alle konzeptionellen, organisatorischen und anleitenden Informationen rund um das Projekt. 
+Das Docs-Repository ist der zentrale Anlaufpunkt für alle konzeptionellen, organisatorischen und anleitenden Informationen rund um das Projekt. Besonders relevant ist der Ordner `/docs/Endabgabe/`, der alle finalen und überarbeiteten Dokumente der Endabnahme bereithält.
 
-**Inhalt und Zweck:**
-- **Installationsanleitung & Setup:** Einer der wichtigsten Bestandteile in diesem Ordner ist die detaillierte Installationsanleitung. Wenn Sie das Projekt (Frontend und Backend) starten oder evaluieren möchten, finden Sie hier alle notwendigen Schritte, Systemanforderungen und Befehle.
-- **Projektphasen & Fortschritt:** Sie finden hier Ordner zu den einzelnen Projektphasen (z.B. Phase 1 bis 6), in denen Meilensteine, Berichte und Abgabedokumente gesammelt sind.
-- **Systemdesign & Architektur:** Das Verzeichnis enthält außerdem Entwürfe, Architekturdiagramme, Datenbankmodelle sowie Protokolle.
-- **Weitere Handbücher:** Allgemeine Beschreibungen, Nutzerhandbücher und API-Dokumentationen liegen ebenfalls in diesem Bereich.
+**Detaillierte Struktur der Dokumentation (`/docs/Endabgabe/`):**
+
+- **`/Anleitungen/`**:
+  - `TaskFlowEngineering-Endabgabe-Installationsanleitung.pdf`: **Der wichtigste Startpunkt.** Dieses Dokument erklärt Schritt für Schritt, wie Sie das Backend und Frontend lokal aufsetzen, konfigurieren und ausführen.
+  - `TaskFlowEngineering-Endabgabe-Handbuch-Zensiert.pdf`: Das Nutzerhandbuch. Es beschreibt aus Anwendersicht, wie die Software bedient wird und welche Funktionen zur Verfügung stehen.
+
+- **`/Design/`**:
+  - `TaskFlowEngineering-Endabgabe-Designbeschreibung.pdf`: Enthält die Architektur, UML-Klassendiagramme und grundlegende technische Design-Entscheidungen, die wir getroffen haben.
+
+- **`/Dokumentation/`**:
+  - `Swagger-Api.pdf`: Detaillierte Dokumentation aller REST-API-Endpunkte, inklusive Anfragen und Antworten.
+  - **`/Code_Dokumentation/`**: Beinhaltet generierte und manuell geschriebene Dokumentationen direkt zum Code (`backend-kommentar-dokumentation.pdf` und `frontend-dokumentation.pdf`), um Entwicklern das Verständnis der Architektur zu erleichtern.
+
+- **Zentrale Projekt-Dokumente (direkt in `/docs/Endabgabe/`):**
+  - `TaskFlowEngineering-Endabgabe-Storyplan.pdf`: Zeigt, wie wir die Anforderungen in Epics und User Stories unterteilt und implementiert haben.
+  - `TaskFlowEngineering-Endabgabe-Testsuite.pdf`: Beschreibt unser Testkonzept und belegt die durchgeführten Qualitätssicherungsmaßnahmen.
+  - `TaskFlowEngineering-Endabgabe-Glossar.pdf`: Eine Übersicht über alle projektspezifischen Fachbegriffe und Definitionen.
+
+- **`/Projektphase 1` bis `/Projektphase 6` (in der obersten `/docs/`-Ebene):**
+  - Diese Ordner dienen als Archiv des Entwicklungsfortschritts. Sie enthalten alle historischen Abgaben, Zwischenstände, Risikoanalysen und Lasten-/Pflichtenhefte der jeweiligen Meilensteine.
 
 ---
 
