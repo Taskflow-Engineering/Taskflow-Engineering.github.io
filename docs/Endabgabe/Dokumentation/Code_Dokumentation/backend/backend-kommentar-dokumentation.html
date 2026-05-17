@@ -1,0 +1,3340 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Backend Kommentar-Dokumentation</title><style>body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#111827}h1{margin:0 0 8px}h2{margin-top:28px;border-bottom:1px solid #e5e7eb;padding-bottom:6px}h3{margin-top:20px}.meta{color:#6b7280;font-size:13px}code{background:#f3f4f6;padding:1px 4px;border-radius:4px}.card{border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin:10px 0}.sig{font-family:Consolas,monospace;font-size:12px;color:#374151}.tag{font-size:12px;color:#4b5563;margin-top:6px}ul{margin:6px 0 0 18px}</style></head><body>
+<h1>Backend Kommentar-Dokumentation</h1><div class='meta'>Generiert aus C# XML Documentation Comments (///)</div>
+<h2>Program</h2>
+<p>Configures and starts the ASP.NET Core application host, including dependency registration, middleware pipeline, and endpoint mapping.</p>
+<h2>Task_Weaver_Backend.Controllers.BlockerController</h2>
+<p>Controller for managing user calendar blockers.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.BlockerController.#ctor(Task_Weaver_Backend.Services.IBlockerService)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>blockerService</code>: The blocker service.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Controllers.FirebaseControllerBase</h2>
+<p>Represents the firebase controller base.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.FirebaseControllerBase.GetFirebaseUid</code></div>
+<div>Extracts the Firebase UID from the authenticated user&#x27;s claims.</div>
+<div class='tag'><b>Returns:</b> The Firebase UID.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when the token is invalid.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Controllers.OrganizationController</h2>
+<p>Controller for organization management and administration operations.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.#ctor(Task_Weaver_Backend.Services.IOrganizationService)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>organizationService</code>: The organization service.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.CreateInvite(System.String,Task_Weaver_Backend.Models.DTOs.CreateInviteDto)</code></div>
+<div>Creates an invitation to join the organization. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>request</code>: Invitation request payload.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 201 with invitation token.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.DeleteInvite(System.String,System.String)</code></div>
+<div>Deletes a pending invitation. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>inviteId</code>: Invitation identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 204 No Content.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.GetInvites(System.String)</code></div>
+<div>Retrieves all pending invitations for an organization. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 200 with list of pending invitations.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.GetMembers(System.String)</code></div>
+<div>Retrieves all members of an organization. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 200 with list of members.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.GetOrganization(System.String)</code></div>
+<div>Retrieves organization details. Requires membership.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 200 with organization details.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.GetOrganizationSettings(System.String)</code></div>
+<div>Retrieves organization settings. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 200 with organization settings.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.IsEmailInWhitelist(System.String)</code></div>
+<div>Performs is email in whitelist.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>email</code>: The email address.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested is email in whitelist.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.RemoveMember(System.String,System.String)</code></div>
+<div>Removes a member from the organization. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>userId</code>: User identifier to remove.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 204 No Content.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.UpdateMemberRole(System.String,System.String,Task_Weaver_Backend.Controllers.UpdateRoleRequest)</code></div>
+<div>Updates the role of an existing member. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>userId</code>: User identifier to update.</li>
+<li><code>request</code>: Role update request payload.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 200 with updated member information.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.OrganizationController.UpdateOrganizationSettings(System.String,Task_Weaver_Backend.Models.OrganizationSettingsDto)</code></div>
+<div>Updates organization settings. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>settings</code>: Updated settings payload.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> HTTP 200 with updated settings.</div>
+</div>
+<h2>Task_Weaver_Backend.Controllers.TaskController</h2>
+<p>Provides task-related endpoints for the authenticated user.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.TaskController.#ctor(Task_Weaver_Backend.Services.ITaskService)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskService</code>: Service used for task management operations.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.TaskController.CreateCalendarTask(Task_Weaver_Backend.Models.DTOs.CreateTaskDto)</code></div>
+<div>Creates a new calendar task for the authenticated user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.TaskController.DeleteCalendarTask(System.String)</code></div>
+<div>Deletes a calendar task for the authenticated user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.TaskController.GetCalendarTasks</code></div>
+<div>Returns all calendar tasks for the authenticated user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.TaskController.MoveTaskChunk(System.String,Task_Weaver_Backend.Models.DTOs.MoveTaskChunkDto)</code></div>
+<div>Moves a scheduled chunk of a task to a new date/time range.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.TaskController.PatchCalendarTask(System.String,Task_Weaver_Backend.Models.DTOs.TaskDto)</code></div>
+<div>Updates an existing calendar task for the authenticated user. Only submitted fields are applied. Supports the optional</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.TaskController.PatchCalendarTaskDates(System.String,System.Collections.Generic.List{Task_Weaver_Backend.Models.DTOs.TaskDateDto})</code></div>
+<div>Replaces the Dates array of a calendar task.</div>
+</div>
+<h2>Task_Weaver_Backend.Controllers.UpdateRoleRequest</h2>
+<p>Request DTO for updating a member&#x27;s role.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Controllers.UpdateRoleRequest.IsAdmin</code></div>
+<div>Gets or sets whether the member should have admin privileges.</div>
+</div>
+<h2>Task_Weaver_Backend.Controllers.UserController</h2>
+<p>Provides user profile and organization membership endpoints for the authenticated user.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.UserController.#ctor(Task_Weaver_Backend.Services.IUserService)</code></div>
+<div>Performs user controller.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>userService</code>: The user service.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.UserController.GetMyOrganizations</code></div>
+<div>Returns all organizations assigned to the authenticated user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.UserController.LeaveOrganization(System.String)</code></div>
+<div>Allows the authenticated user to voluntarily leave an organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Controllers.WorkProfileController</h2>
+<p>Controller for managing user work profiles, including working schedules and chunk settings.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.WorkProfileController.#ctor(Task_Weaver_Backend.Services.IWorkProfileService)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>workProfileService</code>: The work profile service.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.WorkProfileController.CreateSchedule(Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Creates a new working schedule for the authenticated user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>schedule</code>: The schedule data to create.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The created schedule with its generated ID.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when validation fails or overlap is detected.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.WorkProfileController.DeleteSchedule(System.String)</code></div>
+<div>Deletes a working schedule for the authenticated user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>scheduleId</code>: The schedule document ID.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> No content on success.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.WorkProfileController.GetSchedules</code></div>
+<div>Retrieves all working schedules for the authenticated user.</div>
+<div class='tag'><b>Returns:</b> A list of working schedules.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.WorkProfileController.GetSettings</code></div>
+<div>Retrieves the global chunk settings for the authenticated user.</div>
+<div class='tag'><b>Returns:</b> The chunk settings, or null if not configured.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.WorkProfileController.PatchSchedule(System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Updates an existing working schedule for the authenticated user. Performs a full replacement of the schedule data.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>scheduleId</code>: The schedule document ID.</li>
+<li><code>schedule</code>: The updated schedule data.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The updated schedule.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when validation fails, schedule not found, or overlap is detected.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Controllers.WorkProfileController.PatchSettings(Task_Weaver_Backend.Models.GlobalChunkSettingsDto)</code></div>
+<div>Updates the global chunk settings for the authenticated user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>settings</code>: The new chunk settings.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The updated chunk settings.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when settings validation fails.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Extension.ServiceCollectionExtensions</h2>
+<p>Represents the service collection extensions.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Extension.ServiceCollectionExtensions.AddApplicationCors(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)</code></div>
+<div>Performs add application cors.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>services</code>: The services.</li>
+<li><code>configuration</code>: The configuration.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Extension.ServiceCollectionExtensions.AddApplicationServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)</code></div>
+<div>Performs add application services.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>services</code>: The services.</li>
+<li><code>configuration</code>: The configuration.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Extension.ServiceCollectionExtensions.AddFirebaseAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)</code></div>
+<div>Performs add firebase authentication.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>services</code>: The services.</li>
+<li><code>configuration</code>: The configuration.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Extension.ServiceCollectionExtensions.AddSwaggerDocumentation(Microsoft.Extensions.DependencyInjection.IServiceCollection)</code></div>
+<div>Performs add swagger documentation.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>services</code>: The services.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Middleware.ExceptionHandlingMiddleware</h2>
+<p>Middleware to handle exceptions globally and format them as structured ErrorResponseDto.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Middleware.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Task_Weaver_Backend.Middleware.ExceptionHandlingMiddleware})</code></div>
+<div>Performs exception handling middleware.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>next</code>: The next.</li>
+<li><code>logger</code>: The logger.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Middleware.ExceptionHandlingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)</code></div>
+<div>Performs invoke async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>context</code>: The context.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.AppException</h2>
+<p>Custom exception for application-specific errors that can be handled by the middleware.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.AppException.#ctor(System.String,System.String,System.Int32,System.Object)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>errorCode</code>: The error code.</li>
+<li><code>message</code>: The message.</li>
+<li><code>statusCode</code>: The status code.</li>
+<li><code>details</code>: The details.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.AppException.Details</code></div>
+<div>Optional field-specific error details or a general reason string.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.AppException.ErrorCode</code></div>
+<div>The specific error code for frontend mapping.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.AppException.StatusCode</code></div>
+<div>The HTTP status code to return.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.BlockerDto</h2>
+<p>Data Transfer Object representing a Blocker in the system.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.BlockerDto.Dates</code></div>
+<div>List of dates (YYYY-MM-DD) calculated based on recurrence.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.BlockerDto.Description</code></div>
+<div>A detailed description of the blocker.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.BlockerDto.End</code></div>
+<div>ISO 8601 end date/time.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.BlockerDto.Id</code></div>
+<div>The unique identifier of the blocker.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.BlockerDto.RecurrenceCount</code></div>
+<div>Number of repetitions.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.BlockerDto.Start</code></div>
+<div>ISO 8601 start date/time.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.BlockerDto.Title</code></div>
+<div>The title of the blocker.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.BlockerDto.Type</code></div>
+<div>The type of the blocker (unique, daily, weekly).</div>
+</div>
+<h2>Task_Weaver_Backend.Models.BlockerRepository</h2>
+<p>Firestore-backed repository for calendar blocker operations.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.BlockerRepository.#ctor(Google.Cloud.Firestore.FirestoreDb)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>db</code>: The db.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.BlockerRepository.CreateCalendarBlockerAsync(System.String,Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Executes create calendar blocker async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>blocker</code>: The blocker.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.BlockerRepository.DeleteCalendarBlockerAsync(System.String,System.String)</code></div>
+<div>Executes delete calendar blocker async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>blockerId</code>: The blocker identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.BlockerRepository.GetCalendarBlockersAsync(System.String)</code></div>
+<div>Executes get calendar blockers async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.BlockerRepository.PatchCalendarBlockerAsync(System.String,System.String,Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Executes patch calendar blocker async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>blockerId</code>: The blocker identifier.</li>
+<li><code>blocker</code>: The blocker.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.DTOs.CreateInviteDto</h2>
+<p>Represents the create invite dto.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateInviteDto.Email</code></div>
+<div>Gets or sets the email address of the invited user.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.DTOs.CreateTaskDto</h2>
+<p>Represents the create task dto.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.CustomChunkSettings</code></div>
+<div>Gets or sets flow-protection chunk settings.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.Date</code></div>
+<div>Gets or sets the calendar day for the Task (null when type dynamic).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.Deadline</code></div>
+<div>Gets or sets the task deadline. (Null when Task type is not dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.Description</code></div>
+<div>Gets or sets the task description.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.End</code></div>
+<div>ISO 8601 end date/time. (null when type dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.EnergyLevel</code></div>
+<div>Gets or sets the cognitive energy level of the task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.NeedToBeFinishedTaskIds</code></div>
+<div>Gets or sets the identifiers of predecessor tasks. (Null when Task type is not dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.Organization</code></div>
+<div>Gets or sets the organization/company assignment.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.Priority</code></div>
+<div>Gets or sets the task priority.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.RecurrenceCount</code></div>
+<div>Gets or sets the recurrence count for repeating tasks. (null when type dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.Start</code></div>
+<div>ISO 8601 start date/time. (null when type dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.TimeEstimateMinutes</code></div>
+<div>Gets or sets the estimated effort in minutes.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.Title</code></div>
+<div>Gets or sets the task title.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.CreateTaskDto.Type</code></div>
+<div>Gets or sets the task type.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.DTOs.JsonDateConverter</h2>
+<p>JSON converter that serializes DateTime as YYYY-MM-DD date string.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.DTOs.JsonDateConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)</code></div>
+<div>Performs read.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>reader</code>: The reader.</li>
+<li><code>typeToConvert</code>: The type to convert.</li>
+<li><code>options</code>: The options.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.DTOs.JsonDateConverter.Write(System.Text.Json.Utf8JsonWriter,System.DateTime,System.Text.Json.JsonSerializerOptions)</code></div>
+<div>Performs write.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>writer</code>: The writer.</li>
+<li><code>value</code>: The value.</li>
+<li><code>options</code>: The options.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Models.DTOs.MoveTaskChunkDto</h2>
+<p>Represents the move task chunk dto.</p>
+<h2>Task_Weaver_Backend.Models.DTOs.OrganizationInformationDto</h2>
+<p>Data Transfer Object representing an OrganizationData available to members of an Organization in the system.</p>
+<h2>Task_Weaver_Backend.Models.DTOs.RegisterUserDto</h2>
+<p>Represents the register user dto.</p>
+<h2>Task_Weaver_Backend.Models.DTOs.ScheduleDTO</h2>
+<p>Result object for schedule generation with lossless error reporting. Contains both successfully planned tasks and unresolvable tasks with reasons.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.ScheduleDTO.GeneratedAt</code></div>
+<div>Gets or sets the timestamp when this schedule was generated.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.ScheduleDTO.PlannedTasks</code></div>
+<div>Gets or sets the list of successfully planned tasks with updated dates.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.ScheduleDTO.UnresolvableTasks</code></div>
+<div>Gets or sets the list of tasks that could not be scheduled with reasons.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.DTOs.TaskChunkSettingsDto</h2>
+<p>Describes chunk-size settings that protect flow by preventing excessive task switching.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskChunkSettingsDto.MaxMinutes</code></div>
+<div>Gets or sets the maximum chunk size in minutes.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskChunkSettingsDto.MinMinutes</code></div>
+<div>Gets or sets the minimum chunk size in minutes.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.DTOs.TaskDateDto</h2>
+<p>Represents a scheduled execution window for a task.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDateDto.Date</code></div>
+<div>Gets or sets the calendar day for the scheduled block.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDateDto.End</code></div>
+<div>Gets or sets the end time of the scheduled block.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDateDto.IsManuallyMoved</code></div>
+<div>Marks chunks that were explicitly moved by drag-and-drop. Such chunks must not be overwritten by other manual moves.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDateDto.Start</code></div>
+<div>Gets or sets the start time of the scheduled block.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.DTOs.TaskDto</h2>
+<p>Represents a task with the planning inputs needed for scheduling and flow protection.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.CustomChunkSettings</code></div>
+<div>Gets or sets flow-protection chunk settings.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Date</code></div>
+<div>Gets or sets the calendar day for the Task (null when type dynamic).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Dates</code></div>
+<div>Gets or sets the generated task execution windows.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Deadline</code></div>
+<div>Gets or sets the task deadline. (Null when Task type is not dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Description</code></div>
+<div>Gets or sets the task description.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.End</code></div>
+<div>ISO 8601 end date/time. (null when type dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.EnergyLevel</code></div>
+<div>Gets or sets the cognitive energy level of the task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Id</code></div>
+<div>Gets or sets the Firestore document id.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.IsCompleted</code></div>
+<div>Gets or sets whether the task is completed.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.NeedToBeFinishedTaskIds</code></div>
+<div>Gets or sets the identifiers of predecessor tasks. (Null when Task type is not dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Organization</code></div>
+<div>Gets or sets the organization/company assignment.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.PreferImmediateContinuation</code></div>
+<div>Optional patch-only hint: for running dynamic tasks, prefer immediate continuation of the currently active block instead of reordering by normal priority first. Not persisted to Firestore.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Priority</code></div>
+<div>Gets or sets the task priority.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.RecurrenceCount</code></div>
+<div>Gets or sets the recurrence count for repeating tasks. (null when type dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.ReschedulePastChunks</code></div>
+<div>Optional patch-only scheduling flag: when</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Start</code></div>
+<div>ISO 8601 start date/time. (null when type dynamic)</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.TimeEstimateMinutes</code></div>
+<div>Gets or sets the estimated effort in minutes.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Title</code></div>
+<div>Gets or sets the task title.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.TaskDto.Type</code></div>
+<div>Gets or sets the task type.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.DTOs.UnresolvableTaskDto</h2>
+<p>Represents a task that could not be scheduled with the reason why.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.UnresolvableTaskDto.ErrorCode</code></div>
+<div>Gets or sets the error code for programmatic handling.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.UnresolvableTaskDto.Reason</code></div>
+<div>Gets or sets the human-readable reason why the task could not be scheduled.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.DTOs.UnresolvableTaskDto.TaskId</code></div>
+<div>Gets or sets the ID of the task that could not be scheduled.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.ErrorCodes</h2>
+<p>Central class for specific error code constants used by the frontend for mapping.</p>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ChunkSettingsInvalid</code></div>
+<div>The chunk settings are invalid (e.g., min greater than max, or min less than 1).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ChunkSettingsNotFound</code></div>
+<div>The chunk settings were not found for the user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.InsufficientPermissions</code></div>
+<div>The user does not have sufficient permissions to perform this operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.InviteExpired</code></div>
+<div>The invitation has expired and can no longer be accepted.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.InviteNotFound</code></div>
+<div>The requested invitation was not found.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.InviteToEmployee</code></div>
+<div>The user does not have sufficient permissions to perform this operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.LastAdminProtection</code></div>
+<div>The operation is blocked because this user is the last admin of the organization.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.MemberNotFound</code></div>
+<div>The requested member was not found in the organization.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.OrganizationLastAdminCannotLeave</code></div>
+<div>The operation is blocked because this user is the last admin of the organization.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.OrganizationMembershipNotFound</code></div>
+<div>The user is not a member of the requested organization.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.OrganizationNotFound</code></div>
+<div>The requested organization was not found.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleCascadingDeadlineClash</code></div>
+<div>A cascading deadline clash was detected after static task fixation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleChunkConstraintViolation</code></div>
+<div>A task&#x27;s duration cannot be divided into valid chunks that satisfy MinChunkSize and MaxChunkSize constraints.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleCognitiveLimitExceeded</code></div>
+<div>A task cannot be scheduled because it exceeds the daily cognitive budget or real-time limit for its energy level.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleCyclicDependency</code></div>
+<div>A cyclic dependency was detected in the task graph.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleImpossible</code></div>
+<div>The scheduling algorithm could not find a valid schedule.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleInitialDeadlineViolation</code></div>
+<div>A task&#x27;s deadline is already violated before scheduling begins.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleInvalidTimeFormat</code></div>
+<div>The time format is invalid. Expected &quot;HH:mm&quot; format.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleNotFound</code></div>
+<div>The requested working schedule was not found.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleOrphanDependency</code></div>
+<div>A task references a non-existent dependency.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleOutsideWorkHours</code></div>
+<div>A task is scheduled outside of the user&#x27;s defined working hours.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleStartAfterEnd</code></div>
+<div>The start time must be before the end time in a schedule slot.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleStaticClash</code></div>
+<div>Static tasks overlap with each other or with blockers.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleTimeConflict</code></div>
+<div>A time slot conflicts with an existing schedule in the same week range.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleTimeParadox</code></div>
+<div>A time paradox was detected (e.g., sum of durations exceeds available time).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ScheduleTimeout</code></div>
+<div>The scheduling algorithm timed out.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.UserAlreadyMember</code></div>
+<div>The user is already a member of this organization.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.ValidationError</code></div>
+<div>Generic validation error for invalid field data.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Models.ErrorCodes.WhitelistConflict</code></div>
+<div>The domain or email is already whitelisted by another organization.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.ErrorDetailDto</h2>
+<p>DTO representing a specific field error.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.ErrorDetailDto.Field</code></div>
+<div>The name of the field that caused the error.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.ErrorDetailDto.Issue</code></div>
+<div>A description of the issue with the field.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.ErrorDetailsDto</h2>
+<p>Represents the error details dto.</p>
+<h2>Task_Weaver_Backend.Models.ErrorResponseDto</h2>
+<p>DTO representing a structured error response.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.ErrorResponseDto.Details</code></div>
+<div>Optional field-specific error details or a general reason string.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.ErrorResponseDto.Message</code></div>
+<div>Deprecated user-facing message field kept temporarily for compatibility. Hidden from JSON contract in errorCode-only mode.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.GlobalChunkSettingsDto</h2>
+<p>Data Transfer Object representing global chunk size settings for a user. Defines the default minimum and maximum duration for continuous work phases.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.GlobalChunkSettingsDto.DefaultMaxChunkMinutes</code></div>
+<div>The default maximum chunk duration in minutes. Must be greater than or equal to</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.GlobalChunkSettingsDto.DefaultMinChunkMinutes</code></div>
+<div>The default minimum chunk duration in minutes. Must be at least 1 minute.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.IBlockerRepository</h2>
+<p>Repository interface for calendar blocker operations.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IBlockerRepository.CreateCalendarBlockerAsync(System.String,Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Creates a new calendar blocker for a user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>blocker</code>: The blocker data to create.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IBlockerRepository.DeleteCalendarBlockerAsync(System.String,System.String)</code></div>
+<div>Deletes a calendar blocker.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>blockerId</code>: The blocker&#x27;s document ID.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IBlockerRepository.GetCalendarBlockersAsync(System.String)</code></div>
+<div>Retrieves all calendar blockers for a specific user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A list of all blockers for the user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IBlockerRepository.PatchCalendarBlockerAsync(System.String,System.String,Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Updates an existing calendar blocker.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>blockerId</code>: The blocker&#x27;s document ID.</li>
+<li><code>blocker</code>: The updated blocker data.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Models.IOrganizationRepository</h2>
+<p>Repository contract for organization persistence operations.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.AddEmployeeToOrganizationAsync(System.String,System.String)</code></div>
+<div>Adds one user ID to the organization member array.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>uid</code>: User UID to add.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.CreateOrganizationInviteAsync(System.String,Task_Weaver_Backend.Models.InviteDto)</code></div>
+<div>Creates a new invitation document in the organization&#x27;s INVITES subcollection.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>invite</code>: Invitation payload.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The generated invitation identifier.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.DeleteOrganizationInviteAsync(System.String,System.String)</code></div>
+<div>Deletes an invitation from the organization&#x27;s INVITES subcollection.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>inviteId</code>: Invitation identifier.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.GetOrganizationByIdAsync(System.String)</code></div>
+<div>Loads an organization by document identifier.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The organization or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.GetOrganizationByInviteIdAsync(System.String)</code></div>
+<div>Loads an organization by invite identifier.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>inviteId</code>: Invite identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The organization or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.GetOrganizationIdsByUidAsync(System.String)</code></div>
+<div>Retrieves all organization document identifiers where the user is listed as a member.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: User UID.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of organization identifiers.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.GetOrganizationInviteByIdAsync(System.String,System.String)</code></div>
+<div>Retrieves an invitation by its identifier.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>inviteId</code>: Invitation identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The invitation or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.GetOrganizationInvites(System.String)</code></div>
+<div>Retrieves all pending invitations for an organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of pending invitations.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.GetOrganizationSettingsAsync(System.String)</code></div>
+<div>Retrieves organization settings.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The organization settings or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.RemoveEmployeeFromOrganizationAsync(System.String,System.String)</code></div>
+<div>Removes one user ID from the organization members array.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>uid</code>: User UID to remove.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.UpdateOrganizationMemberRole(System.String,System.String,System.Boolean)</code></div>
+<div>Adds or removes one user ID from the organization admins array.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>uid</code>: User UID to add.</li>
+<li><code>isAdmin</code>: </li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IOrganizationRepository.UpdateOrganizationSettingsAsync(System.String,Task_Weaver_Backend.Models.OrganizationSettingsDto)</code></div>
+<div>Updates organization settings.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>settings</code>: Settings payload.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Models.ITaskRepository</h2>
+<p>interface ITaskRepository.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.ITaskRepository.CreateTaskAsync(System.String,Task_Weaver_Backend.Models.DTOs.TaskDto)</code></div>
+<div>Creates a new calendar task for a user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>task</code>: The task to create.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The created task including its generated ID.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.ITaskRepository.DeleteTaskAsync(System.String,System.String)</code></div>
+<div>Deletes a calendar task.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>taskId</code>: The task document ID.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.ITaskRepository.GetTaskAsync(System.String,System.String)</code></div>
+<div>Retrieves a single calendar task by its identifier.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>taskId</code>: The task document ID.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The task or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.ITaskRepository.GetTasksAsync(System.String)</code></div>
+<div>Retrieves all calendar tasks for a user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A list of calendar tasks.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.ITaskRepository.UpdateTaskAsync(System.String,System.String,Task_Weaver_Backend.Models.DTOs.TaskDto)</code></div>
+<div>Updates selected fields of an existing calendar task.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>taskId</code>: The task document ID.</li>
+<li><code>taskUpdate</code>: The partial set of fields to update.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Models.IUserRepository</h2>
+<p>Repository contract for user profile and user-scoped resources.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IUserRepository.CreateUserAsync(System.String,Task_Weaver_Backend.Models.UserProfileDto)</code></div>
+<div>Creates a user profile document.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase user identifier.</li>
+<li><code>profile</code>: Profile payload.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IUserRepository.DeleteUserAsync(System.String)</code></div>
+<div>Deletes a user profile document.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase user identifier.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IUserRepository.GetByIdAsync(System.String)</code></div>
+<div>Loads a user profile by UID.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> User profile or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IUserRepository.GetByLoginEmailAsync(System.String)</code></div>
+<div>Loads a user profile by login email.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>loginEmail</code>: User login email.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> User profile or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IUserRepository.UpdateAsync(System.String,Task_Weaver_Backend.Models.UserProfileDto)</code></div>
+<div>Updates profile fields on an existing user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase user identifier.</li>
+<li><code>updateData</code>: Patch payload.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Models.IWorkProfileRepository</h2>
+<p>Repository interface for working schedule operations.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IWorkProfileRepository.CreateWorkingScheduleAsync(System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Creates a new working schedule for a user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>schedule</code>: The schedule data to create.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The created schedule with its generated ID.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IWorkProfileRepository.DeleteWorkingScheduleAsync(System.String,System.String)</code></div>
+<div>Deletes a working schedule.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>scheduleId</code>: The schedule&#x27;s document ID.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IWorkProfileRepository.GetGlobalChunkSettingsAsync(System.String)</code></div>
+<div>Retrieves the global chunk settings for a user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The user&#x27;s global chunk settings, or null if not set.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IWorkProfileRepository.GetWorkingSchedulesAsync(System.String)</code></div>
+<div>Retrieves all working schedules for a specific user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A list of all working schedules for the user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IWorkProfileRepository.PatchWorkingScheduleAsync(System.String,System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Updates an existing working schedule.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>scheduleId</code>: The schedule&#x27;s document ID.</li>
+<li><code>schedule</code>: The updated schedule data.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The updated schedule.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.IWorkProfileRepository.UpdateGlobalChunkSettingsAsync(System.String,Task_Weaver_Backend.Models.GlobalChunkSettingsDto)</code></div>
+<div>Updates the global chunk settings for a user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user&#x27;s Firebase UID.</li>
+<li><code>settings</code>: The new chunk settings.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Models.InviteDto</h2>
+<p>Data Transfer Object representing an invitation to join an organization.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.InviteDto.Email</code></div>
+<div>Gets or sets the email address of the invited user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.InviteDto.ExpiresAt</code></div>
+<div>Gets or sets the expiration timestamp for the invitation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.InviteDto.Id</code></div>
+<div>Gets or sets the unique identifier for the invitation.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.MemberDto</h2>
+<p>Data Transfer Object representing a member of an organization with role information.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.MemberDto.Email</code></div>
+<div>Gets or sets the email address of the member.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.MemberDto.FirstName</code></div>
+<div>Gets or sets the first name of the member.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.MemberDto.IsAdmin</code></div>
+<div>Gets or sets a value indicating whether the member has admin privileges.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.MemberDto.LastName</code></div>
+<div>Gets or sets the last name of the member.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.MemberDto.SystemRole</code></div>
+<div>Gets or sets the system Role of the member.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.MemberDto.Uid</code></div>
+<div>Gets or sets the unique identifier of the user.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.OrganizationDto</h2>
+<p>Data Transfer Object representing an Organization in the system.</p>
+<h2>Task_Weaver_Backend.Models.OrganizationRepository</h2>
+<p>Firestore-backed repository for organization documents.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.#ctor(Google.Cloud.Firestore.FirestoreDb)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>db</code>: The db.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.AddEmployeeToOrganizationAsync(System.String,System.String)</code></div>
+<div>Executes add employee to organization async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.CreateOrganizationInviteAsync(System.String,Task_Weaver_Backend.Models.InviteDto)</code></div>
+<div>Performs create organization invite async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>invite</code>: The invite.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A result indicating successful creation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.DeleteOrganizationInviteAsync(System.String,System.String)</code></div>
+<div>Executes delete organization invite async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>inviteId</code>: The invite identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetAllDomainWhitelistAsync</code></div>
+<div>Performs get all domain whitelist async.</div>
+<div class='tag'><b>Returns:</b> The requested all domain whitelist async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetAllEmailWhitelistAsync</code></div>
+<div>Performs get all email whitelist async.</div>
+<div class='tag'><b>Returns:</b> The requested all email whitelist async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetOrgIdFromWhitelistedEmail(System.String)</code></div>
+<div>Performs get org id from whitelisted email.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>email</code>: The email address.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested org id from whitelisted email.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetOrganizationByIdAsync(System.String)</code></div>
+<div>Executes get organization by id async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetOrganizationByInviteIdAsync(System.String)</code></div>
+<div>Executes get organization by invite id async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>inviteId</code>: The invite identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetOrganizationIdsByUidAsync(System.String)</code></div>
+<div>Performs get organization ids by uid async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested organization ids by uid async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetOrganizationInviteByIdAsync(System.String,System.String)</code></div>
+<div>Performs get organization invite by id async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>inviteId</code>: The invite identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested organization invite by id async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetOrganizationInvites(System.String)</code></div>
+<div>Performs get organization invites.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested organization invites.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.GetOrganizationSettingsAsync(System.String)</code></div>
+<div>Executes get organization settings async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.RemoveEmployeeFromOrganizationAsync(System.String,System.String)</code></div>
+<div>Executes remove employee from organization async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.UpdateOrganizationMemberRole(System.String,System.String,System.Boolean)</code></div>
+<div>Performs update organization member role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>isAdmin</code>: The is admin.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.OrganizationRepository.UpdateOrganizationSettingsAsync(System.String,Task_Weaver_Backend.Models.OrganizationSettingsDto)</code></div>
+<div>Executes update organization settings async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>settings</code>: The settings.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.OrganizationRoleDto</h2>
+<p>Represents a user&#x27;s role metadata within a specific organization.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.OrganizationRoleDto.IsAdmin</code></div>
+<div>Indicates whether the user has administrator privileges in the organization.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.OrganizationRoleDto.OrganizationId</code></div>
+<div>The identifier of the related organization.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.OrganizationSettingsDto</h2>
+<p>Data Transfer Object for organization-specific settings.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.OrganizationSettingsDto.DomainWhiteList</code></div>
+<div>Gets or sets the list of whitelisted email domains (e.g., @company.com).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.OrganizationSettingsDto.EmailWhiteList</code></div>
+<div>Gets or sets the list of whitelisted specific email addresses.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.OrganizationSettingsDto.InviteLinkValidityDays</code></div>
+<div>Gets or sets the number of days an invitation link remains valid. Default is 30 days.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.ScheduleDayDto</h2>
+<p>Data Transfer Object representing a single day&#x27;s working time slot within a schedule.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.ScheduleDayDto.End</code></div>
+<div>The end time of the working slot in &quot;HH:mm&quot; format (e.g., &quot;17:00&quot;). Must be after</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.ScheduleDayDto.OrganizationId</code></div>
+<div>Optional organization ID for exclusive time slots. When set, the scheduler only assigns tasks from this specific organization. When null or empty, this is a &quot;Flex-Block&quot; allowing tasks from any linked organization.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.ScheduleDayDto.Start</code></div>
+<div>The start time of the working slot in &quot;HH:mm&quot; format (e.g., &quot;08:00&quot;).</div>
+</div>
+<h2>Task_Weaver_Backend.Models.TaskRepository</h2>
+<p>Represents the task repository.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.TaskRepository.#ctor(Google.Cloud.Firestore.FirestoreDb)</code></div>
+<div>Performs task repository.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>db</code>: The db.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.TaskRepository.CreateTaskAsync(System.String,Task_Weaver_Backend.Models.DTOs.TaskDto)</code></div>
+<div>Performs create task async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>task</code>: The task.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.TaskRepository.DeleteTaskAsync(System.String,System.String)</code></div>
+<div>Performs delete task async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>taskId</code>: The task identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.TaskRepository.GetTaskAsync(System.String,System.String)</code></div>
+<div>Performs get task async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>taskId</code>: The task identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested task async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.TaskRepository.GetTasksAsync(System.String)</code></div>
+<div>Performs get tasks async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested tasks async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.TaskRepository.UpdateTaskAsync(System.String,System.String,Task_Weaver_Backend.Models.DTOs.TaskDto)</code></div>
+<div>Performs update task async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>taskUpdate</code>: The task update.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.UserOrganizationDto</h2>
+<p>Data Transfer Object for listing organizations of the authenticated user. Includes organization data and the user&#x27;s role metadata within that organization.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.UserOrganizationDto.Id</code></div>
+<div>The unique organization identifier.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.UserOrganizationDto.Name</code></div>
+<div>The organization display name.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.UserRepository</h2>
+<p>Firestore-backed repository for user profiles and user-scoped resources.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.UserRepository.#ctor(Google.Cloud.Firestore.FirestoreDb)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>db</code>: The db.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.UserRepository.CreateUserAsync(System.String,Task_Weaver_Backend.Models.UserProfileDto)</code></div>
+<div>Executes create user async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>profile</code>: The profile.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.UserRepository.DeleteUserAsync(System.String)</code></div>
+<div>Performs delete user async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.UserRepository.GetByIdAsync(System.String)</code></div>
+<div>Executes get by id async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.UserRepository.GetByLoginEmailAsync(System.String)</code></div>
+<div>Executes get by login email async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>loginEmail</code>: The login email.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.UserRepository.UpdateAsync(System.String,Task_Weaver_Backend.Models.UserProfileDto)</code></div>
+<div>Executes update async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>updateData</code>: The update data.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.WhitelistRegistryDto</h2>
+<p>Data Transfer Object for the global whitelist registry to enforce uniqueness. Each domain or email can only be claimed by one organization.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WhitelistRegistryDto.ClaimedAt</code></div>
+<div>Gets or sets the timestamp when this entry was claimed.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WhitelistRegistryDto.Id</code></div>
+<div>Gets or sets the unique identifier (domain or email address).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WhitelistRegistryDto.OrganizationId</code></div>
+<div>Gets or sets the organization ID that has claimed this whitelist entry.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WhitelistRegistryDto.Type</code></div>
+<div>Gets or sets the type of whitelist entry (&quot;domain&quot; or &quot;email&quot;).</div>
+</div>
+<h2>Task_Weaver_Backend.Models.WorkProfileRepository</h2>
+<p>Firestore-backed repository for working schedule operations.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.WorkProfileRepository.#ctor(Google.Cloud.Firestore.FirestoreDb)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>db</code>: The db.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.WorkProfileRepository.CreateWorkingScheduleAsync(System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Executes create working schedule async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>schedule</code>: The schedule.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.WorkProfileRepository.DeleteWorkingScheduleAsync(System.String,System.String)</code></div>
+<div>Executes delete working schedule async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>scheduleId</code>: The schedule identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.WorkProfileRepository.GetGlobalChunkSettingsAsync(System.String)</code></div>
+<div>Executes get global chunk settings async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.WorkProfileRepository.GetWorkingScheduleAsync(System.String,System.String)</code></div>
+<div>Performs get working schedule async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>workingScheduleId</code>: The working schedule id.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested working schedule async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.WorkProfileRepository.GetWorkingSchedulesAsync(System.String)</code></div>
+<div>Executes get working schedules async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.WorkProfileRepository.PatchWorkingScheduleAsync(System.String,System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Executes patch working schedule async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>scheduleId</code>: The schedule identifier.</li>
+<li><code>schedule</code>: The schedule.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Models.WorkProfileRepository.UpdateGlobalChunkSettingsAsync(System.String,Task_Weaver_Backend.Models.GlobalChunkSettingsDto)</code></div>
+<div>Executes update global chunk settings async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>settings</code>: The settings.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Models.WorkingScheduleDto</h2>
+<p>Data Transfer Object representing a working schedule for a specific week range. Contains availability time slots organized by weekday.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WorkingScheduleDto.Id</code></div>
+<div>The unique identifier of the working schedule.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WorkingScheduleDto.Schedule</code></div>
+<div>Dictionary mapping weekday names (lowercase, e.g., &quot;monday&quot;, &quot;tuesday&quot;) to their time slots. Each day can have multiple time slots defined in</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WorkingScheduleDto.WeekEnd</code></div>
+<div>The ending week number (ISO 8601 week numbering, 1-53). Must be greater than or equal to</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WorkingScheduleDto.WeekStart</code></div>
+<div>The starting week number (ISO 8601 week numbering, 1-53).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Models.WorkingScheduleDto.Year</code></div>
+<div>The calendar year this schedule applies to (e.g., 2026).</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.BacktrackingStack</h2>
+<p>Manages the backtracking stack for undo operations during scheduling.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.BacktrackingStack.Count</code></div>
+<div>Gets the current stack size.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.BacktrackingStack.IsEmpty</code></div>
+<div>Checks if the stack is empty.</div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.BacktrackingStack.Pop</code></div>
+<div>Pops the last placement entry from the stack.</div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.BacktrackingStack.Push(Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry)</code></div>
+<div>Pushes a placement entry onto the stack.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>entry</code>: The entry.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.CalendarGrid</h2>
+<p>Calendar grid for efficient slot management with 15-minute granularity.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.#ctor(System.TimeSpan)</code></div>
+<div>Performs calendar grid.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>slotSize</code>: The slot size.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.ClipAtMidnight(System.DateTime,System.TimeSpan)</code></div>
+<div>Clips a duration at midnight (for multi-day task handling).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>slotStart</code>: The slot start.</li>
+<li><code>duration</code>: The duration.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.ClipToWorkPlan(System.DateTime,System.DateTime)</code></div>
+<div>Clips a time range to the available work slots in the grid. If the range is entirely outside the work plan, returns null.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>start</code>: The start.</li>
+<li><code>end</code>: The end.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The clipped start/end range aligned to available slots, or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.FreeBlock(Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock)</code></div>
+<div>Frees a time block (for backtracking).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>block</code>: The block.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.GetAvailableDuration(System.DateTime)</code></div>
+<div>Gets the available duration from a slot until the next blocked slot or end of day.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>slotStart</code>: The slot start.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.GetNextFreeSlot(System.DateTime)</code></div>
+<div>Gets the next free slot starting from a given time.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>from</code>: The from.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.GetTotalFreeSlotsCount</code></div>
+<div>Performs get total free slots count.</div>
+<div class='tag'><b>Returns:</b> The requested total free slots count.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.Initialize(Task_Weaver_Backend.Services.Algorithm.Models.WorkPlan,Task_Weaver_Backend.Services.Algorithm.Models.IntervalTree,System.DateTime,System.DateTime)</code></div>
+<div>Initializes the calendar grid from work plan and merged blocked zones.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>workPlan</code>: The work plan.</li>
+<li><code>mergedBlockers</code>: The merged blockers.</li>
+<li><code>startDate</code>: The start date.</li>
+<li><code>endDate</code>: The end date.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.IsSlotFree(System.DateTime)</code></div>
+<div>Checks if a specific slot is free.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>slot</code>: The slot.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CalendarGrid.MarkBlocked(Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock)</code></div>
+<div>Marks a time block as blocked (unavailable).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>block</code>: The block.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.ChunkEvaluator</h2>
+<p>Evaluates chunk sizes for tasks, resolving local vs. global settings.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.ChunkEvaluator.CalculateChunkDuration(System.TimeSpan,System.TimeSpan,System.TimeSpan,System.TimeSpan)</code></div>
+<div>Calculates the chunk duration for a task placement. Enforces hard MinChunk constraint: returns TimeSpan.Zero if slot is too small.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>slotDuration</code>: The slot duration.</li>
+<li><code>maxChunk</code>: The max chunk.</li>
+<li><code>minChunk</code>: The min chunk.</li>
+<li><code>remainingDuration</code>: The remaining duration.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.ChunkEvaluator.IsSlotTooSmall(System.TimeSpan,System.TimeSpan)</code></div>
+<div>Checks if a slot is too small to accommodate the minimum chunk size.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>slotDuration</code>: The slot duration.</li>
+<li><code>underLimit</code>: The under limit.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.ChunkEvaluator.ResolveMaxChunkSize(Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask,Task_Weaver_Backend.Services.Algorithm.Models.ChunkSettings)</code></div>
+<div>Resolves the maximum chunk size for a task (local override or global default).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>task</code>: The task.</li>
+<li><code>globalSettings</code>: The global settings.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.ChunkEvaluator.ResolveMinChunkSize(Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask,Task_Weaver_Backend.Services.Algorithm.Models.ChunkSettings)</code></div>
+<div>Resolves the minimum chunk size for a task (local override or global default).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>task</code>: The task.</li>
+<li><code>globalSettings</code>: The global settings.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.ChunkEvaluator.ValidateTaskChunkCompatibility(System.TimeSpan,System.TimeSpan,System.TimeSpan)</code></div>
+<div>Validates whether a task&#x27;s duration can be divided into valid chunks that satisfy MinChunk and MaxChunk constraints. Returns true if the duration is compatible, false otherwise.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>remainingDuration</code>: The remaining duration.</li>
+<li><code>minChunk</code>: The min chunk.</li>
+<li><code>maxChunk</code>: The max chunk.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.CognitiveGuard</h2>
+<p>Cognitive guard implementing a dual-tracker system for cognitive budget management. Prevents burnout by tracking both energy pool (weighted) and real-time limits per level.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.CalculateBudgetCost(Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel,System.TimeSpan)</code></div>
+<div>Calculates the energy cost for a task chunk (Konto A). Level 3: Duration × 2, Level 2: Duration × 1, Level 1: 0.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>level</code>: The level.</li>
+<li><code>chunkDuration</code>: The chunk duration.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.DeductBudget(System.DateOnly,Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel,System.TimeSpan)</code></div>
+<div>Deducts budget from both accounts (energy pool and real-time tracker).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+<li><code>level</code>: The level.</li>
+<li><code>chunkDuration</code>: The chunk duration.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.GetEnergyBudgetForDay(System.DateOnly)</code></div>
+<div>Gets the remaining energy budget for a specific day.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.GetLevel2RealTimeBudgetForDay(System.DateOnly)</code></div>
+<div>Gets the remaining Level 2 real-time budget for a specific day.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.GetLevel3RealTimeBudgetForDay(System.DateOnly)</code></div>
+<div>Gets the remaining Level 3 real-time budget for a specific day.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.GetMaxAllowedRealTime(Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel)</code></div>
+<div>Gets the hard real-time limit for a specific cognitive level.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>level</code>: The level.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The maximum allowed real-time duration for the specified level.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.GetMaxChunkDurationForDay(System.DateOnly,Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel)</code></div>
+<div>Returns the maximum remaining chunk duration allowed for the given day and level. This combines the daily weighted cognitive cap, the weighted energy pool and the per-level real-time cap.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+<li><code>level</code>: The level.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.HasBudget(System.DateOnly,Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel,System.TimeSpan)</code></div>
+<div>Checks if both accounts (energy pool and real-time limit) have sufficient budget. BOTH must pass for the task to be scheduled.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+<li><code>level</code>: The level.</li>
+<li><code>chunkDuration</code>: The chunk duration.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.Initialize(System.Collections.Generic.Dictionary{System.DateOnly,System.TimeSpan})</code></div>
+<div>Initializes the cognitive guard with daily energy pools.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>workDays</code>: The work days.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.IsCooldownRequired</code></div>
+<div>Checks if a cooldown (Level 1 task) is required.</div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.IsDayFinished(System.DateOnly)</code></div>
+<div>Checks whether a day was marked finished.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.IsHeavyLimitReached(System.DateOnly)</code></div>
+<div>Checks whether heavy cognitive scheduling (Level 2/3) is exhausted for this day. If true, only Level 1 tasks should be scheduled for the remainder of the day.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.MarkDayAsFinished(System.DateOnly)</code></div>
+<div>Marks the given day as finished: no further dynamic scheduling allowed.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.RecordTaskExecution(Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel)</code></div>
+<div>Records task execution and updates cooldown status.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>level</code>: The level.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.RegisterPause</code></div>
+<div>Registers a pause (empty slot) which also clears the cooldown requirement.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.RestoreBudget(System.DateOnly,Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel,System.TimeSpan)</code></div>
+<div>Restores budget to both accounts (for backtracking).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>day</code>: The day.</li>
+<li><code>level</code>: The level.</li>
+<li><code>chunkDuration</code>: The chunk duration.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.SetCooldownStatus(System.Boolean)</code></div>
+<div>Sets the cooldown status.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>status</code>: The status.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CognitiveGuard.SetDailyCognitiveLimit(System.TimeSpan)</code></div>
+<div>Configure the daily cognitive limit (for tests/configuration).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>limit</code>: The limit.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.CpmCalculator</h2>
+<p>Critical Path Method (CPM) calculator for deadline analysis and slack computation.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CpmCalculator.Calculate(Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph,System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock}},System.DateTime)</code></div>
+<div>Calculates CPM metrics (Earliest Start, Latest Finish, Slack) for all tasks. Note: For most accurate results, tasks should be topologically sorted before calling this method. However, the algorithm is designed to handle unsorted lists by iterating through dependencies.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>graph</code>: The graph.</li>
+<li><code>tasks</code>: The tasks.</li>
+<li><code>existingBlocks</code>: The existing blocks.</li>
+<li><code>now</code>: The now.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The resulting collection.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CpmCalculator.DetectTimeParadoxes(System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.CpmResult},System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask},System.DateTime,System.TimeZoneInfo)</code></div>
+<div>Detects time paradoxes (e.g., sum of task durations exceeds available time window).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>results</code>: The results.</li>
+<li><code>tasks</code>: The tasks.</li>
+<li><code>now</code>: The now.</li>
+<li><code>userTimeZone</code>: The user time zone.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CpmCalculator.HasNegativeSlack(System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.CpmResult})</code></div>
+<div>Checks if any task has negative slack (deadline violation).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>results</code>: The results.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CpmCalculator.Reevaluate(Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph,System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock}},System.DateTime)</code></div>
+<div>Re-evaluates CPM after static task fixation.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>graph</code>: The graph.</li>
+<li><code>dynamicTasks</code>: The dynamic tasks.</li>
+<li><code>existingBlocks</code>: The existing blocks.</li>
+<li><code>now</code>: The now.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The resulting collection.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.CpmCalculator.ValidateAsapSafety(Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask,System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask},System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.CpmResult})</code></div>
+<div>Validates ASAP safety: checks if an ASAP task would push other tasks past their deadlines.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>asapTask</code>: The asap task.</li>
+<li><code>otherTasks</code>: The other tasks.</li>
+<li><code>cpmResults</code>: The cpm results.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.DagBuilder</h2>
+<p>Builds and validates a directed acyclic graph (DAG) from task dependencies.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.DagBuilder.Build(System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask})</code></div>
+<div>Builds a dependency graph from a list of tasks.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>tasks</code>: The tasks.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.DagBuilder.CheckOrphans(System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask},System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask})</code></div>
+<div>Checks for orphan dependencies (references to non-existent tasks). Throws immediately on the first missing dependency.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>tasksToCheck</code>: The tasks to check.</li>
+<li><code>allTasks</code>: The all tasks.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.DagBuilder.DetectCycles(Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph)</code></div>
+<div>Detects cycles in the dependency graph using DFS.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>graph</code>: The graph.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.DagBuilder.TopologicalSort(Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph,System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask})</code></div>
+<div>Performs topological sort with priority ordering. Sorting criteria: 1. In-Degree = 0, 2. Deadline (asc), 3. Priority (desc), 4. ASAP status, 5. Company affinity.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>graph</code>: The graph.</li>
+<li><code>tasks</code>: The tasks.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The resulting collection.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.DefaultScheduleAlgorithm</h2>
+<p>Default implementation of the scheduling algorithm. Implements a deterministic backtracking algorithm with cognitive guards and multi-tenant support.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.DefaultScheduleAlgorithm.GenerateScheduleAsync(System.Collections.Generic.List{Task_Weaver_Backend.Models.DTOs.TaskDto},System.Collections.Generic.List{Task_Weaver_Backend.Models.BlockerDto},System.Collections.Generic.List{Task_Weaver_Backend.Models.WorkingScheduleDto},Task_Weaver_Backend.Models.GlobalChunkSettingsDto,System.Boolean,System.String,System.Threading.CancellationToken,System.Boolean)</code></div>
+<div>Generates a schedule for the given tasks, blockers, and working schedules.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>tasks</code>: The tasks.</li>
+<li><code>blockers</code>: The blockers.</li>
+<li><code>workingSchedules</code>: The working schedules.</li>
+<li><code>chunkSettings</code>: The chunk settings.</li>
+<li><code>isFreelancer</code>: The is freelancer.</li>
+<li><code>timeZoneId</code>: The time zone id.</li>
+<li><code>cancellationToken</code>: The cancellation token.</li>
+<li><code>reschedulePastChunks</code>: The reschedule past chunks.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.DefaultScheduleAlgorithm.GetDateFromWeek(System.Int32,System.Int32,System.DayOfWeek)</code></div>
+<div>Returns the calendar date for a given ISO 8601 week number, year, and day of the week. ISO 8601: Week 1 is the week that contains the first Thursday of the year. Monday is day 1.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.DefaultScheduleAlgorithm.PurgeFutureDynamicBlocks(System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask})</code></div>
+<div>Removes all future time blocks belonging to dynamic tasks from the working block list. This enables zero-based re-planning: the scheduler places all dynamic task chunks fresh from</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.DefaultScheduleAlgorithm.ResolveEffectiveChunkSizes(Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask)</code></div>
+<div>Resolves effective chunk sizes for a task with strict local-first precedence. If local values are set, they are always used. Global settings are only fallback.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.CascadingDeadlineClashException</h2>
+<p>Thrown when a task cannot meet its deadline due to the placement of higher-priority tasks.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.CascadingDeadlineClashException.#ctor(System.String,System.DateTime)</code></div>
+<div>Performs cascading deadline clash exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>deadline</code>: The deadline that cannot be met.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.ChunkConstraintViolationException</h2>
+<p>Thrown when a task&#x27;s duration cannot be divided into chunks that respect min/max constraints.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.ChunkConstraintViolationException.#ctor(System.String,System.TimeSpan,System.TimeSpan,System.TimeSpan)</code></div>
+<div>Performs chunk constraint violation exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>totalDuration</code>: The total duration.</li>
+<li><code>minChunk</code>: The min chunk.</li>
+<li><code>maxChunk</code>: The maximum allowed chunk duration.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.CognitiveLimitExceededException</h2>
+<p>Thrown when a task cannot be scheduled because its duration or minimum chunk size exceeds the daily cognitive budget or real-time limit for its energy level.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.CognitiveLimitExceededException.#ctor(System.String,System.String)</code></div>
+<div>Performs cognitive limit exceeded exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>reason</code>: The reason why cognitive limits are exceeded.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.CyclicDependencyException</h2>
+<p>Thrown when a circular dependency is detected in the task graph.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.CyclicDependencyException.#ctor(System.Collections.Generic.List{System.String})</code></div>
+<div>Performs cyclic dependency exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>affectedTaskIds</code>: The affected task ids.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.InitialDeadlineViolationException</h2>
+<p>Thrown when a task&#x27;s deadline is already violated before scheduling begins. This is a user error and will NOT be masked.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.InitialDeadlineViolationException.#ctor(System.String,System.DateTime)</code></div>
+<div>Performs initial deadline violation exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>deadline</code>: The violated deadline.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.OrphanDependencyException</h2>
+<p>Thrown when a task references a dependency that does not exist.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.OrphanDependencyException.#ctor(System.String,System.String)</code></div>
+<div>Performs orphan dependency exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>missingDependencyId</code>: The missing dependency identifier.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.PlanImpossibleException</h2>
+<p>Thrown when the scheduling algorithm cannot find a valid schedule. This is a complex internal error and will be masked.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.PlanImpossibleException.#ctor(System.String)</code></div>
+<div>Performs plan impossible exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>reason</code>: The reason.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.PlanningException</h2>
+<p>Base exception for all planning-related errors.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.PlanningException.#ctor(System.String,System.String,System.Boolean,System.Collections.Generic.List{System.String},System.Nullable{System.DateTime},System.Object,System.String)</code></div>
+<div>Performs planning exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>errorCode</code>: The error code.</li>
+<li><code>message</code>: The message.</li>
+<li><code>isMasked</code>: The is masked.</li>
+<li><code>affectedTaskIds</code>: The affected task ids.</li>
+<li><code>slot</code>: The slot.</li>
+<li><code>details</code>: The details.</li>
+<li><code>userReason</code>: The user reason.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Exceptions.PlanningException.AffectedTaskIds</code></div>
+<div>List of affected task IDs (for debugging).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Exceptions.PlanningException.IsMasked</code></div>
+<div>Indicates whether this exception should be masked with a generic message. True = &quot;Planning impossible&quot; (complex internal errors). False = Original message passed through (user errors).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Exceptions.PlanningException.ReasonDetail</code></div>
+<div>Specific reason for the planning failure (for debugging).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Exceptions.PlanningException.Slot</code></div>
+<div>The slot where the error occurred (if applicable).</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.ScheduleTimeoutException</h2>
+<p>Thrown when the scheduling algorithm times out. This is a complex internal error and will be masked.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.ScheduleTimeoutException.#ctor</code></div>
+<div>Performs schedule timeout exception.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.StaticClashException</h2>
+<p>Thrown when static tasks overlap with each other or with blockers. This is a user error and will NOT be masked.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.StaticClashException.#ctor(System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs static clash exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>message</code>: The message.</li>
+<li><code>affectedTaskIds</code>: The affected task ids.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.TimeParadoxException</h2>
+<p>Thrown when a time paradox is detected (e.g., sum of task durations exceeds time window). This is a user error and will NOT be masked.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.TimeParadoxException.#ctor(System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs time paradox exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>message</code>: The message.</li>
+<li><code>affectedTaskIds</code>: The affected task ids.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Exceptions.UserPlanningException</h2>
+<p>Thrown for user-actionable planning constraints that should be shown unmasked.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Exceptions.UserPlanningException.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Object)</code></div>
+<div>Performs user planning exception.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>reason</code>: The reason.</li>
+<li><code>affectedTaskIds</code>: The affected task ids.</li>
+<li><code>errorCode</code>: The error code.</li>
+<li><code>details</code>: The details.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry</h2>
+<p>Entry in the backtracking stack for undo operations.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry.CooldownStatusBeforePlacement</code></div>
+<div>The cooldown status before this placement (for restoration during backtracking).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry.LastScheduledTaskDayBeforePlacement</code></div>
+<div>Snapshot of the day for the last scheduled task before this placement.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry.LastScheduledTaskIdBeforePlacement</code></div>
+<div>Snapshot of the last scheduled task id before this placement (for restoring alternation tracker on backtrack).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry.PlacedBlock</code></div>
+<div>The time block that was placed.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry.SearchCursorBeforePlacement</code></div>
+<div>Cursor position before this placement.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry.Task</code></div>
+<div>The task that was placed.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.BacktrackingEntry.VisitedSlot</code></div>
+<div>The slot that was visited (for visited-set tracking).</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.ChunkSettings</h2>
+<p>Global chunk size configuration for flow protection.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.ChunkSettings.GlobalMaxChunkSize</code></div>
+<div>Global maximum chunk size.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.ChunkSettings.GlobalMinChunkSize</code></div>
+<div>Global minimum chunk size.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel</h2>
+<p>Represents the cognitive difficulty level of a task. Used for cognitive budget calculations in the scheduling algorithm.</p>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel.LEVEL_1_NORMAL</code></div>
+<div>Normal or light tasks that require minimal cognitive effort. No cognitive budget cost.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel.LEVEL_2_HEAVY</code></div>
+<div>Heavy tasks that require significant cognitive effort. Budget cost: Duration × 1, Real-time limit: 240 minutes/day.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Services.Algorithm.Models.CognitiveLevel.LEVEL_3_VERY_HEAVY</code></div>
+<div>Very heavy tasks that require intense cognitive effort. Budget cost: Duration × 2, Real-time limit: 120 minutes/day.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.CpmResult</h2>
+<p>Result of Critical Path Method (CPM) calculation for a task.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.CpmResult.EarliestStart</code></div>
+<div>Earliest start time for the task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.CpmResult.LatestFinish</code></div>
+<div>Latest finish time for the task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.CpmResult.Slack</code></div>
+<div>Slack time (buffer) available for the task. Negative slack indicates a deadline violation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.CpmResult.TaskId</code></div>
+<div>Task identifier.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph</h2>
+<p>Represents a directed acyclic graph (DAG) of task dependencies.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph.AreDependenciesMet(System.String,System.Collections.Generic.HashSet{System.String})</code></div>
+<div>Checks if all dependencies for a given task are met.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>completedTaskIds</code>: The completed task ids.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True if all dependencies are met, false otherwise.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph.Edges</code></div>
+<div>Dictionary of edges (TaskId -&gt; List of dependent TaskIds).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph.HasCycle</code></div>
+<div>Indicates whether the graph contains a cycle.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.DependencyGraph.Nodes</code></div>
+<div>Dictionary of task nodes (TaskId -&gt; Task).</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.IntervalTree</h2>
+<p>Interval tree for efficient blocked time range queries. Stores merged, non-overlapping time intervals.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Models.IntervalTree.Add(System.DateTime,System.DateTime)</code></div>
+<div>Adds a time interval to the tree.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>start</code>: The start.</li>
+<li><code>end</code>: The end.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Models.IntervalTree.GetIntervals</code></div>
+<div>Gets all intervals in the tree.</div>
+<div class='tag'><b>Returns:</b> A read-only list of all stored intervals.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Models.IntervalTree.IsBlocked(System.DateTime,System.DateTime)</code></div>
+<div>Checks if a given time range is blocked by any interval in the tree.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>start</code>: The start.</li>
+<li><code>end</code>: The end.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> True when the condition is met; otherwise false.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.Models.IntervalTree.Merge</code></div>
+<div>Merges overlapping and adjacent intervals into a single sorted list. Must be called after all intervals are added.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.OrganizationRules</h2>
+<p>Organization-specific rules for task scheduling (e.g., freelancer constraints).</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.OrganizationRules.AllowedOrganizationIds</code></div>
+<div>List of organization IDs the user is allowed to work for.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.OrganizationRules.CanUseFlexSlots</code></div>
+<div>Indicates whether the user can use flex slots (non-exclusive time blocks).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.OrganizationRules.IsFreelancer</code></div>
+<div>Indicates whether the user is a freelancer. Derived explicitly from UserProfileDto.SystemRole == &quot;freelancer&quot;.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.ScheduleProfile</h2>
+<p>Bundled user context and configuration for the scheduling algorithm.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.ScheduleProfile.ChunkSettings</code></div>
+<div>Global chunk size settings.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.ScheduleProfile.OrganizationRules</code></div>
+<div>Organization-specific rules (freelancer constraints, etc.).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.ScheduleProfile.SlotGranularity</code></div>
+<div>Slot granularity for rounding (e.g., 5, 10, or 15 minutes).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.ScheduleProfile.WorkPlan</code></div>
+<div>User&#x27;s working schedule configuration.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask</h2>
+<p>Internal task model used by the scheduling algorithm. Isolated from the Firestore DTO layer.</p>
+<div class='card'>
+<div class='sig'><code>F:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.AsapPriorityLevel</code></div>
+<div>Priority level that marks a task as ASAP (As Soon As Possible).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.CognitiveLevel</code></div>
+<div>Cognitive difficulty level of the task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.Dependencies</code></div>
+<div>List of task IDs that must be completed before this task can start.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.HardDeadline</code></div>
+<div>Hard deadline for task completion.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.IsAsap</code></div>
+<div>Indicates whether this task has ASAP priority (Priority == 10).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.IsCompleted</code></div>
+<div>Indicates whether the task is fully completed.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.IsPastLocked</code></div>
+<div>Indicates whether past blocks of this task are locked and cannot be rescheduled.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.IsStatic</code></div>
+<div>Indicates whether this task is static (manually fixed) and cannot be moved.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.LocalMaxChunkSize</code></div>
+<div>Task-specific maximum chunk size override (null = use global setting).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.LocalMinChunkSize</code></div>
+<div>Task-specific minimum chunk size override (null = use global setting).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.OrganizationId</code></div>
+<div>Organization identifier this task belongs to.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.PreferImmediateContinuation</code></div>
+<div>Optional scheduling hint to prioritize immediate continuation of this task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.Priority</code></div>
+<div>Task priority (1-10, where 10 is ASAP).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.RemainingDuration</code></div>
+<div>Remaining duration to be scheduled (decreases as chunks are placed).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.TaskId</code></div>
+<div>Unique identifier of the task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.Title</code></div>
+<div>Human-readable title of the task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask.TotalDuration</code></div>
+<div>Total duration of the task in minutes.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock</h2>
+<p>Represents a time block (blocker or scheduled task chunk).</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock.EndTime</code></div>
+<div>End time of the block (UTC).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock.IsExclusiveSlot</code></div>
+<div>Indicates whether this slot is exclusive to a specific organization (for freelancers).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock.IsManuallyMoved</code></div>
+<div>True when the block was manually placed by drag-and-drop and should remain fixed during dynamic re-scheduling.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock.IsPastLocked</code></div>
+<div>Indicates whether this block is in the past and locked.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock.IsTrackedExecution</code></div>
+<div>True when the block comes from concrete timestamped execution evidence (ISO datetime), not from a planned HH:mm scheduler slot.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock.OrganizationId</code></div>
+<div>Organization ID this block is associated with.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock.StartTime</code></div>
+<div>Start time of the block (UTC).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock.TaskId</code></div>
+<div>Task ID this block belongs to (empty for blockers).</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.Models.WorkPlan</h2>
+<p>Represents the user&#x27;s working schedule configuration.</p>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.WorkPlan.DailySlots</code></div>
+<div>Organization-specific time slots (for freelancers with multiple clients). Key: DateOnly, Value: List of time slots with optional organization filter.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.WorkPlan.WorkDayEnd</code></div>
+<div>End time of the work day.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.WorkPlan.WorkDayStart</code></div>
+<div>Start time of the work day.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>P:Task_Weaver_Backend.Services.Algorithm.Models.WorkPlan.WorkDays</code></div>
+<div>Days of the week the user works.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.PreProcessor</h2>
+<p>Preprocessor for normalizing input data and applying delta scheduling.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.PreProcessor.ApplyDeltaScheduling(System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask},System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock},System.DateTime,System.Boolean)</code></div>
+<div>Applies delta scheduling: locks past blocks and subtracts completed time from total duration. Future blocks of dynamic tasks are NOT subtracted here — they will be purged from the working block list before re-planning, ensuring a clean zero-based re-schedule from</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>tasks</code>: The tasks.</li>
+<li><code>existingBlocks</code>: The existing blocks.</li>
+<li><code>now</code>: The now.</li>
+<li><code>reschedulePastChunks</code>: When</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.PreProcessor.NormalizeToUtc(System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask},System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock})</code></div>
+<div>Normalizes all datetime values to UTC.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>tasks</code>: The tasks.</li>
+<li><code>blocks</code>: The blocks.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.PreProcessor.UnrollAndMergeSperrzonen(System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.TimeBlock},System.Collections.Generic.List{Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask},System.DateTime)</code></div>
+<div>Unrolls recurring blockers and merges all blocked time ranges into an interval tree.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>blockers</code>: The blockers.</li>
+<li><code>staticTasks</code>: The static tasks.</li>
+<li><code>now</code>: The now.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Algorithm.SlotFinder</h2>
+<p>Finds eligible time slots for task placement with organization-specific constraints.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.SlotFinder.#ctor(Task_Weaver_Backend.Services.Algorithm.CalendarGrid,Task_Weaver_Backend.Services.Algorithm.Models.OrganizationRules,Task_Weaver_Backend.Services.Algorithm.Models.WorkPlan)</code></div>
+<div>Performs slot finder.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>calendarGrid</code>: The calendar grid.</li>
+<li><code>orgRules</code>: The org rules.</li>
+<li><code>workPlan</code>: The work plan.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.SlotFinder.ApplyGranularityRounding(System.DateTime,System.TimeSpan)</code></div>
+<div>Rounds a slot to the specified granularity (5, 10, or 15 minutes).</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>slot</code>: The slot.</li>
+<li><code>granularity</code>: The granularity.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.SlotFinder.FindNextEligibleSlot(Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask,System.DateTime,System.Collections.Generic.HashSet{System.String},System.TimeSpan)</code></div>
+<div>Finds the next eligible slot for a task, considering all constraints.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>task</code>: The task.</li>
+<li><code>from</code>: The from.</li>
+<li><code>visitedSet</code>: The visited set.</li>
+<li><code>slotGranularity</code>: The slot granularity.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The computed result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.SlotFinder.IsBeforeDeadline(System.DateTime,System.DateTime)</code></div>
+<div>Checks if a slot is before the deadline.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.SlotFinder.IsInVisitedSet(System.String,System.DateTime,System.Collections.Generic.HashSet{System.String})</code></div>
+<div>Checks if a task-slot combination is in the visited set.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.SlotFinder.IsSlotExclusiveForOtherOrganization(System.DateTime,Task_Weaver_Backend.Services.Algorithm.Models.SchedulingTask)</code></div>
+<div>Checks if a slot is exclusive to a different organization (for freelancers).</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Algorithm.SlotFinder.IsWithinWorkPlan(System.DateTime)</code></div>
+<div>Checks if a slot is within the defined work plan hours.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.BlockerService</h2>
+<p>Provides CRUD operations for blockers and keeps schedules in sync.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.BlockerService.#ctor(Task_Weaver_Backend.Models.IBlockerRepository,Task_Weaver_Backend.Models.ITaskRepository,Task_Weaver_Backend.Models.IUserRepository,Task_Weaver_Backend.Validators.IBlockerValidator,Task_Weaver_Backend.Services.IScheduler)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>blockerRepository</code>: Repository used to persist blocker entities.</li>
+<li><code>taskRepository</code>: Repository used for overlap checks with tasks.</li>
+<li><code>userRepository</code>: Repository used to load user context data.</li>
+<li><code>validator</code>: Validator used to enforce blocker input rules.</li>
+<li><code>scheduler</code>: Scheduler used to recompute plans after blocker changes.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.BlockerService.CreateCalendarBlockerAsync(System.String,Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Creates a blocker, validates overlaps, and re-schedules tasks.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>createDto</code>: Payload containing blocker properties.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.BlockerService.DeleteCalendarBlockerAsync(System.String,System.String)</code></div>
+<div>Deletes a blocker and triggers task re-scheduling.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>blockerId</code>: The blocker identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.BlockerService.GetCalendarBlockersAsync(System.String)</code></div>
+<div>Loads all blockers for the given user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of blockers assigned to the user calendar.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.BlockerService.PatchCalendarBlockerAsync(System.String,System.String,Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Updates an existing blocker, validates overlaps, and re-schedules tasks.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>blockerId</code>: The blocker identifier.</li>
+<li><code>updateDto</code>: Payload containing updated blocker properties.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.BrevoEmailService</h2>
+<p>Represents the brevo email service.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.BrevoEmailService.#ctor(System.Net.Http.HttpClient,Task_Weaver_Backend.Services.IEnvVariableLoader)</code></div>
+<div>Performs brevo email service.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>http</code>: The http.</li>
+<li><code>envVariableLoader</code>: The env variable loader.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.BrevoEmailService.SendInviteEmailAsync(System.String,System.String,System.String)</code></div>
+<div>Performs send invite email async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>toEmail</code>: The recipient email address.</li>
+<li><code>inviteId</code>: The invite identifier.</li>
+<li><code>organizationName</code>: The organization name.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.IBlockerService</h2>
+<p>interface IBlockerService.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IBlockerService.CreateCalendarBlockerAsync(System.String,Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Erstellt einen Kalender-Blocker fuer den Nutzer.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase-UID des Nutzers.</li>
+<li><code>createDto</code>: Blocker-Daten.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IBlockerService.DeleteCalendarBlockerAsync(System.String,System.String)</code></div>
+<div>Loescht einen Kalender-Blocker.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase-UID des Nutzers.</li>
+<li><code>blockerId</code>: Kennung des Blockers.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IBlockerService.GetCalendarBlockersAsync(System.String)</code></div>
+<div>Laedt alle Kalender-Blocker des Nutzers.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase-UID des Nutzers.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> Liste aller Blocker.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IBlockerService.PatchCalendarBlockerAsync(System.String,System.String,Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Aktualisiert einen vorhandenen Kalender-Blocker.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase-UID des Nutzers.</li>
+<li><code>blockerId</code>: Kennung des Blockers.</li>
+<li><code>updateDto</code>: Neue Blocker-Daten.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.IEmailService</h2>
+<p>interface IEmailService.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IEmailService.SendInviteEmailAsync(System.String,System.String,System.String)</code></div>
+<div>Send a transactional email.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.IEnvVariableLoader</h2>
+<p>interface IEnvVariableLoader.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IEnvVariableLoader.Load(System.String)</code></div>
+<div>Performs load.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>variableName</code>: The variable name.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested load.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.IOrganizationService</h2>
+<p>interface IOrganizationService.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.CreateInviteAsync(System.String,System.String,System.String)</code></div>
+<div>Creates an invitation to join the organization. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>email</code>: Email address of the invitee.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The generated invitation token.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not an admin or organization not found.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.DeleteInviteAsync(System.String,System.String,System.String)</code></div>
+<div>Deletes a pending invitation. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>inviteId</code>: Invitation identifier.</li>
+</ul></div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not an admin or invitation not found.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.GetOrganizationAsync(System.String,System.String)</code></div>
+<div>Retrieves organization details. Requires membership.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> Organization details.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not a member or organization not found.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.GetOrganizationMembersAsync(System.String,System.String)</code></div>
+<div>Retrieves all members of an organization. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of organization members with role information.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not an admin or organization not found.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.GetOrganizationSettingsAsync(System.String,System.String)</code></div>
+<div>Retrieves organization settings. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> Organization settings.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not an admin or organization not found.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.GetPendingInvitesAsync(System.String,System.String)</code></div>
+<div>Retrieves all pending invitations for an organization. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of pending invitations.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not an admin or organization not found.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.RemoveMemberAsync(System.String,System.String,System.String)</code></div>
+<div>Removes a member from the organization. Requires admin role. For employees (systemRole=employee), deletes from both Firestore and Firebase Auth. For freelancers (systemRole=freelancer), only removes from organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>targetUid</code>: User identifier to remove.</li>
+</ul></div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not an admin, target is last admin, or member not found.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.UpdateMemberRoleAsync(System.String,System.String,System.String,System.Boolean)</code></div>
+<div>Updates the role of an existing member. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>targetUid</code>: User identifier to update.</li>
+<li><code>isAdmin</code>: Whether the target user should have admin privileges.</li>
+</ul></div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not an admin, target is last admin being demoted, or member not found.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IOrganizationService.UpdateOrganizationSettingsAsync(System.String,System.String,Task_Weaver_Backend.Models.OrganizationSettingsDto)</code></div>
+<div>Updates organization settings. Requires admin role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Requesting user identifier.</li>
+<li><code>orgId</code>: Organization identifier.</li>
+<li><code>settings</code>: Updated settings payload.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> Updated organization settings.</div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown when user is not an admin, whitelist conflict occurs, or organization not found.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.IScheduleAlgorithm</h2>
+<p>interface IScheduleAlgorithm.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IScheduleAlgorithm.GenerateScheduleAsync(System.Collections.Generic.List{Task_Weaver_Backend.Models.DTOs.TaskDto},System.Collections.Generic.List{Task_Weaver_Backend.Models.BlockerDto},System.Collections.Generic.List{Task_Weaver_Backend.Models.WorkingScheduleDto},Task_Weaver_Backend.Models.GlobalChunkSettingsDto,System.Boolean,System.String,System.Threading.CancellationToken,System.Boolean)</code></div>
+<div>Generates a schedule for the given tasks using blockers, availability, and chunk settings.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>tasks</code>: Tasks that should be scheduled.</li>
+<li><code>blockers</code>: Blocking intervals that must not be used.</li>
+<li><code>workingSchedules</code>: User working schedules that define available windows.</li>
+<li><code>chunkSettings</code>: Global chunk boundaries for splitting work.</li>
+<li><code>isFreelancer</code>: Whether freelancer scheduling rules should be applied.</li>
+<li><code>timeZoneId</code>: IANA time zone identifier used for calculations.</li>
+<li><code>cancellationToken</code>: Cancellation token for cooperative cancellation.</li>
+<li><code>reschedulePastChunks</code>: When</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> Scheduled tasks including their computed date chunks.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.IScheduler</h2>
+<p>Service responsible for orchestrating the rescheduling of tasks.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IScheduler.RescheduleTasksAsync(System.String,System.Collections.Generic.List{Task_Weaver_Backend.Models.DTOs.TaskDto},System.Collections.Generic.List{Task_Weaver_Backend.Models.BlockerDto},System.Collections.Generic.List{Task_Weaver_Backend.Models.WorkingScheduleDto},Task_Weaver_Backend.Models.GlobalChunkSettingsDto,System.Boolean,System.Threading.CancellationToken)</code></div>
+<div>Reschedules tasks for a specific user, considering blockers and working schedules.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>tasks</code>: The tasks.</li>
+<li><code>blockers</code>: The blockers.</li>
+<li><code>workingSchedules</code>: The working schedules.</li>
+<li><code>chunkSettingsOverride</code>: The chunk settings override.</li>
+<li><code>reschedulePastChunks</code>: When</li>
+<li><code>cancellationToken</code>: The cancellation token.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task representing the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.ITaskService</h2>
+<p>interface ITaskService.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.ITaskService.CreateCalendarTaskAsync(System.String,Task_Weaver_Backend.Models.DTOs.CreateTaskDto)</code></div>
+<div>Creates a new calendar task.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>taskData</code>: Task to be created.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The created task.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.ITaskService.DeleteCalendarTaskAsync(System.String,System.String)</code></div>
+<div>Deletes a calendar task.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>taskId</code>: Identifier of the task.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.ITaskService.GetCalendarTasksAsync(System.String)</code></div>
+<div>Loads all calendar tasks of the user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of all tasks.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.ITaskService.MoveTaskChunkAsync(System.String,System.String,Task_Weaver_Backend.Models.DTOs.MoveTaskChunkDto)</code></div>
+<div>Moves a scheduled task chunk to a new date/time range.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>taskId</code>: Identifier of the task.</li>
+<li><code>dto</code>: Source and target chunk coordinates.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.ITaskService.PatchCalendarTaskAsync(System.String,System.String,Task_Weaver_Backend.Models.DTOs.TaskDto,System.Boolean)</code></div>
+<div>Selectively updates individual fields of an existing calendar task.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>taskId</code>: Identifier of the task.</li>
+<li><code>taskData</code>: Only the task fields sent in the request.</li>
+<li><code>reschedulePastChunks</code>: When</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.ITaskService.PatchCalendarTaskDatesAsync(System.String,System.String,System.Collections.Generic.List{Task_Weaver_Backend.Models.DTOs.TaskDateDto})</code></div>
+<div>Replaces the Dates array of an existing calendar task.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.IUserService</h2>
+<p>Encapsulates the business logic for user profile, organization assignment, calendar data, and work profiles.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IUserService.AcceptInviteAsync(System.String,System.String)</code></div>
+<div>Accepts an organization invitation via its invite ID.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>inviteId</code>: Invite ID of the organization.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IUserService.GetMyOrganizationsAsync(System.String)</code></div>
+<div>Loads all organizations of the authenticated user including role and join date.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of all assigned organizations.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IUserService.GetUserAsync(System.String)</code></div>
+<div>Loads the profile of the authenticated user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The user profile.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IUserService.LeaveOrganizationAsync(System.String,System.String)</code></div>
+<div>Voluntarily removes the user from an organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>orgId</code>: ID of the organization.</li>
+</ul></div>
+<div class='tag'><b>Exceptions</b><ul>
+<li><code>T:Task_Weaver_Backend.Models.AppException</code>: Thrown if the organization does not exist, the user is not a member, or the user tries to leave as the last remaining admin.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IUserService.RegisterUserAsync(System.String,Task_Weaver_Backend.Models.DTOs.RegisterUserDto)</code></div>
+<div>Creates or synchronizes the Firestore user profile for the authenticated user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>registrationData</code>: User profile to be created.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IUserService.UpdateUserAsync(System.String,Task_Weaver_Backend.Models.UserDto)</code></div>
+<div>Updates the personal profile data of the user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>updateData</code>: Profile changes to be saved.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.IWorkProfileService</h2>
+<p>interface IWorkProfileService.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IWorkProfileService.CreateWorkingScheduleAsync(System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Creates a new working schedule including overlap check.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>schedule</code>: Working schedule to be created.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The created working schedule.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IWorkProfileService.DeleteWorkingScheduleAsync(System.String,System.String)</code></div>
+<div>Deletes a working schedule.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>scheduleId</code>: Identifier of the working schedule.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IWorkProfileService.GetChunkSettingsAsync(System.String)</code></div>
+<div>Loads the user&#x27;s global chunk settings.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The global chunk settings or</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IWorkProfileService.GetWorkingSchedulesAsync(System.String)</code></div>
+<div>Loads all working schedules of the user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of all working schedules.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IWorkProfileService.PatchChunkSettingsAsync(System.String,Task_Weaver_Backend.Models.GlobalChunkSettingsDto)</code></div>
+<div>Updates the global chunk settings for protecting continuous work phases.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>settings</code>: New chunk settings.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The updated chunk settings.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.IWorkProfileService.PatchWorkingScheduleAsync(System.String,System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Updates an existing working schedule including overlap check.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: Firebase UID of the user.</li>
+<li><code>scheduleId</code>: Identifier of the working schedule.</li>
+<li><code>schedule</code>: Updated schedule data.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The updated working schedule.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.OrganizationService</h2>
+<p>Represents the organization service.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.#ctor(Task_Weaver_Backend.Models.IOrganizationRepository,Task_Weaver_Backend.Models.IUserRepository,Task_Weaver_Backend.Validators.IOrganizationValidator,Task_Weaver_Backend.Services.IEmailService)</code></div>
+<div>Performs organization service.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>organizationRepository</code>: The organization repository.</li>
+<li><code>userRepository</code>: The user repository.</li>
+<li><code>organizationValidator</code>: The organization validator.</li>
+<li><code>emailService</code>: The email service.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.CreateInviteAsync(System.String,System.String,System.String)</code></div>
+<div>Performs create invite async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>email</code>: The email address.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.DeleteInviteAsync(System.String,System.String,System.String)</code></div>
+<div>Performs delete invite async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>inviteId</code>: The invite identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.GetOrganizationAsync(System.String,System.String)</code></div>
+<div>Performs get organization async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested organization async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.GetOrganizationMembersAsync(System.String,System.String)</code></div>
+<div>Performs get organization members async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested organization members async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.GetOrganizationSettingsAsync(System.String,System.String)</code></div>
+<div>Performs get organization settings async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested organization settings async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.GetPendingInvitesAsync(System.String,System.String)</code></div>
+<div>Performs get pending invites async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested pending invites async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.IsEmailInWhitelistAsync(System.String)</code></div>
+<div>Performs is email in whitelist async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>email</code>: The email address.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested is email in whitelist async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.RemoveMemberAsync(System.String,System.String,System.String)</code></div>
+<div>Performs remove member async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>targetUid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.UpdateMemberRoleAsync(System.String,System.String,System.String,System.Boolean)</code></div>
+<div>Performs update member role async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>targetUid</code>: The user identifier.</li>
+<li><code>isAdmin</code>: The is admin.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.OrganizationService.UpdateOrganizationSettingsAsync(System.String,System.String,Task_Weaver_Backend.Models.OrganizationSettingsDto)</code></div>
+<div>Performs update organization settings async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>settings</code>: The settings.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.Scheduler</h2>
+<p>Implementation of the scheduler service.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Scheduler.#ctor(Task_Weaver_Backend.Models.ITaskRepository,Task_Weaver_Backend.Models.IBlockerRepository,Task_Weaver_Backend.Models.IWorkProfileRepository,Task_Weaver_Backend.Models.IUserRepository,Task_Weaver_Backend.Services.IScheduleAlgorithm)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskRepository</code>: The task repository.</li>
+<li><code>blockerRepository</code>: The blocker repository.</li>
+<li><code>workProfileRepository</code>: The work profile repository.</li>
+<li><code>userRepository</code>: The user repository.</li>
+<li><code>scheduleAlgorithm</code>: The schedule algorithm.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.Scheduler.RescheduleTasksAsync(System.String,System.Collections.Generic.List{Task_Weaver_Backend.Models.DTOs.TaskDto},System.Collections.Generic.List{Task_Weaver_Backend.Models.BlockerDto},System.Collections.Generic.List{Task_Weaver_Backend.Models.WorkingScheduleDto},Task_Weaver_Backend.Models.GlobalChunkSettingsDto,System.Boolean,System.Threading.CancellationToken)</code></div>
+<div>Executes reschedule tasks async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>tasks</code>: The tasks.</li>
+<li><code>blockers</code>: The blockers.</li>
+<li><code>workingSchedules</code>: The working schedules.</li>
+<li><code>chunkSettingsOverride</code>: The chunk settings override.</li>
+<li><code>reschedulePastChunks</code>: The reschedule past chunks.</li>
+<li><code>cancellationToken</code>: The cancellation token.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.SecretLoader</h2>
+<p>Represents the secret loader.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.SecretLoader.Load(System.String)</code></div>
+<div>Performs load.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>secretId</code>: The secret id.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested load.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.ShearedService</h2>
+<p>Represents the sheared service.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.ShearedService.#ctor(Task_Weaver_Backend.Models.IOrganizationRepository,Task_Weaver_Backend.Models.IUserRepository)</code></div>
+<div>Performs sheared service.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>organizationRepository</code>: The organization repository.</li>
+<li><code>userRepository</code>: The user repository.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Services.TaskService</h2>
+<p>Creates a calendar task after validating the company assignment for freelancer accounts.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.TaskService.#ctor(Task_Weaver_Backend.Models.ITaskRepository,Task_Weaver_Backend.Models.IUserRepository,Task_Weaver_Backend.Models.IOrganizationRepository,Task_Weaver_Backend.Services.IScheduler,Task_Weaver_Backend.Validators.ITaskValidator,Task_Weaver_Backend.Models.IWorkProfileRepository,Task_Weaver_Backend.Models.IBlockerRepository)</code></div>
+<div>Performs task service.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskRepository</code>: The task repository.</li>
+<li><code>userRepository</code>: The user repository.</li>
+<li><code>organizationRepository</code>: The organization repository.</li>
+<li><code>scheduler</code>: The scheduler.</li>
+<li><code>validator</code>: The validator.</li>
+<li><code>workProfileRepository</code>: The work profile repository.</li>
+<li><code>blockerRepository</code>: The blocker repository.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.TaskService.CreateCalendarTaskAsync(System.String,Task_Weaver_Backend.Models.DTOs.CreateTaskDto)</code></div>
+<div>Creates a calendar task. For static tasks, validates that the new time block does not overlap with any existing static task or blocker (within 365 days). Dynamic tasks are validated by attempting a full schedule before any persistence.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>taskData</code>: The task data.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.TaskService.DeleteCalendarTaskAsync(System.String,System.String)</code></div>
+<div>Deletes an existing calendar task after verifying that it exists. No conflict validation is performed – deletion can only resolve, never create, conflicts.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>taskId</code>: The task identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.TaskService.GetCalendarTasksAsync(System.String)</code></div>
+<div>Returns the calendar tasks that belong to the authenticated user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.TaskService.MoveTaskChunkAsync(System.String,System.String,Task_Weaver_Backend.Models.DTOs.MoveTaskChunkDto)</code></div>
+<div>Moves a single existing scheduled chunk by exact source coordinates.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>dto</code>: The dto.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.TaskService.PatchCalendarTaskAsync(System.String,System.String,Task_Weaver_Backend.Models.DTOs.TaskDto,System.Boolean)</code></div>
+<div>Updates only the task fields that were explicitly sent by the client. For static tasks, validates that the updated time block does not create new overlaps.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>taskData</code>: The task data.</li>
+<li><code>reschedulePastChunks</code>: The reschedule past chunks.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.TaskService.PatchCalendarTaskDatesAsync(System.String,System.String,System.Collections.Generic.List{Task_Weaver_Backend.Models.DTOs.TaskDateDto})</code></div>
+<div>Performs patch calendar task dates async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>taskId</code>: The task identifier.</li>
+<li><code>dates</code>: The dates.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.TaskService.ValidateNewStaticBlocksAsync(System.String,Task_Weaver_Backend.Models.DTOs.TaskDto,System.String,System.TimeZoneInfo,System.Boolean)</code></div>
+<div>Validates that none of the new task&#x27;s time blocks violate working schedules and that non-past blocks do not overlap with existing static tasks/blockers within the next 365 days. when true, past blocks are validated against working schedules; when false, past blocks are skipped.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.UserService</h2>
+<p>Business logic for user profile, organization membership, blockers and work-profile operations.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.UserService.#ctor(Task_Weaver_Backend.Models.IUserRepository,Task_Weaver_Backend.Models.IOrganizationRepository,Task_Weaver_Backend.Validators.IUserValidator)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>userRepository</code>: The user repository.</li>
+<li><code>organizationRepository</code>: The organization repository.</li>
+<li><code>userValidator</code>: The user validator.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.UserService.AcceptInviteAsync(System.String,System.String)</code></div>
+<div>Assigns a user to an organization with the specified role.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>inviteId</code>: The invite identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.UserService.GetMyOrganizationsAsync(System.String)</code></div>
+<div>Executes get my organizations async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that resolves to the requested result.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.UserService.GetUserAsync(System.String)</code></div>
+<div>Performs get user async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> The requested user async.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.UserService.LeaveOrganizationAsync(System.String,System.String)</code></div>
+<div>Executes leave organization async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.UserService.RegisterUserAsync(System.String,Task_Weaver_Backend.Models.DTOs.RegisterUserDto)</code></div>
+<div>Performs register user async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>registrationData</code>: The registration data.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.UserService.UpdateUserAsync(System.String,Task_Weaver_Backend.Models.UserDto)</code></div>
+<div>Performs update user async.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>updateData</code>: The update data.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Services.WorkProfileService</h2>
+<p>Handles working schedules and chunk settings for a user work profile.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.WorkProfileService.#ctor(Task_Weaver_Backend.Services.IScheduler,Task_Weaver_Backend.Models.IWorkProfileRepository,Task_Weaver_Backend.Validators.IWorkProfileValidator,Task_Weaver_Backend.Models.IOrganizationRepository,Task_Weaver_Backend.Models.IUserRepository)</code></div>
+<div>Initializes a new instance of the</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>scheduler</code>: Scheduler used to re-plan tasks after profile changes.</li>
+<li><code>workProfileRepository</code>: Repository for persisting work profile data.</li>
+<li><code>workProfileValidator</code>: Validator for schedules and chunk settings.</li>
+<li><code>organizationRepository</code>: Repository used to resolve organization membership.</li>
+<li><code>userRepository</code>: Repository used to resolve user data.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.WorkProfileService.CreateWorkingScheduleAsync(System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Creates a new working schedule and triggers task re-scheduling.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>schedule</code>: Working schedule payload including year, week range, and day slots.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.WorkProfileService.DeleteWorkingScheduleAsync(System.String,System.String)</code></div>
+<div>Deletes a working schedule and triggers task re-scheduling.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>scheduleId</code>: The schedule identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.WorkProfileService.GetChunkSettingsAsync(System.String)</code></div>
+<div>Loads global chunk settings for the specified user profile. If no settings are stored yet, default values are returned.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> Resolved global chunk settings for task planning.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.WorkProfileService.GetWorkingSchedulesAsync(System.String)</code></div>
+<div>Loads all working schedules configured by the user.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> List of working schedules for the user.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.WorkProfileService.PatchChunkSettingsAsync(System.String,Task_Weaver_Backend.Models.GlobalChunkSettingsDto)</code></div>
+<div>Updates global chunk settings and triggers task re-scheduling.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>settings</code>: Chunk planning constraints such as min/max chunk duration and defaults.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Services.WorkProfileService.PatchWorkingScheduleAsync(System.String,System.String,Task_Weaver_Backend.Models.WorkingScheduleDto)</code></div>
+<div>Updates an existing working schedule and triggers task re-scheduling.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>scheduleId</code>: The schedule identifier.</li>
+<li><code>schedule</code>: Updated schedule payload that replaces the existing schedule values.</li>
+</ul></div>
+<div class='tag'><b>Returns:</b> A task that represents the asynchronous operation.</div>
+</div>
+<h2>Task_Weaver_Backend.Validators.BlockerValidator</h2>
+<p>Represents the blocker validator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.BlockerValidator.ValidateBlocker(Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Performs validate blocker.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>blocker</code>: The blocker.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.IBlockerValidator</h2>
+<p>interface IBlockerValidator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.IBlockerValidator.ValidateBlocker(Task_Weaver_Backend.Models.BlockerDto)</code></div>
+<div>Performs validate blocker.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>blocker</code>: The blocker.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.IOrganizationValidator</h2>
+<p>interface IOrganizationValidator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.IOrganizationValidator.ValidateUserIsAdminOfOrganization(System.String,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate user is admin of organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>admins</code>: The admins.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.IOrganizationValidator.ValidateUserIsNotLastAdminOfOrganization(System.String,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate user is not last admin of organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>targetUid</code>: The user identifier.</li>
+<li><code>admins</code>: The admins.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.IShearedValidator</h2>
+<p>interface IShearedValidator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.IShearedValidator.ValidateUserIsMemberOfOrganization(System.String,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate user is member of organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>members</code>: The members.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.ITaskValidator</h2>
+<p>interface ITaskValidator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.ITaskValidator.ValidateCreateTaskDto(Task_Weaver_Backend.Models.DTOs.CreateTaskDto,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate create task dto.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskData</code>: The task data.</li>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>userOrganizations</code>: The user organizations.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.ITaskValidator.ValidateTaskDto(Task_Weaver_Backend.Models.DTOs.TaskDto,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate task dto.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskData</code>: The task data.</li>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>userOrganizations</code>: The user organizations.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.IUserValidator</h2>
+<p>interface IUserValidator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.IUserValidator.ValidateUserDto(System.String,Task_Weaver_Backend.Models.UserDto)</code></div>
+<div>Performs validate user dto.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>userDto</code>: The user dto.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.IWorkProfileValidator</h2>
+<p>interface IWorkProfileValidator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.IWorkProfileValidator.ValidateChunkSettings(System.String,Task_Weaver_Backend.Models.GlobalChunkSettingsDto)</code></div>
+<div>Performs validate chunk settings.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>settings</code>: The settings.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.IWorkProfileValidator.ValidateWorkingSchedule(Task_Weaver_Backend.Models.WorkingScheduleDto,System.Collections.Generic.List{Task_Weaver_Backend.Models.WorkingScheduleDto})</code></div>
+<div>Performs validate working schedule.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>schedule</code>: The schedule.</li>
+<li><code>oldWorkingSchedules</code>: The old working schedules.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.OrganizationValidator</h2>
+<p>Represents the organization validator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.OrganizationValidator.ValidateUserIsAdminOfOrganization(System.String,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate user is admin of organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>admins</code>: The admins.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.OrganizationValidator.ValidateUserIsNotLastAdminOfOrganization(System.String,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate user is not last admin of organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>targetUid</code>: The user identifier.</li>
+<li><code>admins</code>: The admins.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.ShearedValidator</h2>
+<p>Represents the sheared validator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.ShearedValidator.ValidateUserIsMemberOfOrganization(System.String,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate user is member of organization.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>orgId</code>: The organization identifier.</li>
+<li><code>members</code>: The members.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.TaskValidator</h2>
+<p>Represents the task validator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.TaskValidator.ValidateCreateTaskDto(Task_Weaver_Backend.Models.DTOs.CreateTaskDto,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate create task dto.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskData</code>: The task data.</li>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>userOrganizations</code>: The user organizations.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.TaskValidator.ValidateTaskDto(Task_Weaver_Backend.Models.DTOs.TaskDto,System.String,System.Collections.Generic.List{System.String})</code></div>
+<div>Performs validate task dto.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>taskData</code>: The task data.</li>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>userOrganizations</code>: The user organizations.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.UserValidator</h2>
+<p>Represents the user validator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.UserValidator.ValidateUserDto(System.String,Task_Weaver_Backend.Models.UserDto)</code></div>
+<div>Performs validate user dto.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>userDto</code>: The user dto.</li>
+</ul></div>
+</div>
+<h2>Task_Weaver_Backend.Validators.WorkProfileValidator</h2>
+<p>Represents the work profile validator.</p>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.WorkProfileValidator.ValidateChunkSettings(System.String,Task_Weaver_Backend.Models.GlobalChunkSettingsDto)</code></div>
+<div>Performs validate chunk settings.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>uid</code>: The user identifier.</li>
+<li><code>settings</code>: The settings.</li>
+</ul></div>
+</div>
+<div class='card'>
+<div class='sig'><code>M:Task_Weaver_Backend.Validators.WorkProfileValidator.ValidateWorkingSchedule(Task_Weaver_Backend.Models.WorkingScheduleDto,System.Collections.Generic.List{Task_Weaver_Backend.Models.WorkingScheduleDto})</code></div>
+<div>Performs validate working schedule.</div>
+<div class='tag'><b>Parameter</b><ul>
+<li><code>schedule</code>: The schedule.</li>
+<li><code>oldWorkingSchedules</code>: The old working schedules.</li>
+</ul></div>
+</div>
+</body></html>
